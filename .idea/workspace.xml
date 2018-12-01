@@ -4,18 +4,17 @@
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/AgedBrie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gilded-nor/sample/AgedBrie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Backstage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gilded-nor/sample/Backstage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Conjured.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gilded-nor/sample/Conjured.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gilded-nor/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/DexterityVest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gilded-nor/sample/DexterityVest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Elixir.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gilded-nor/sample/Elixir.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gilded-nor/sample/Inventory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gilded-nor/sample/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gilded-nor/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Sulfuras.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gilded-nor/sample/Sulfuras.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/AgedBrie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Backstage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Conjured.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/DexterityVest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Elixir.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Inventory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gilded-nor/sample/Sulfuras.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Item.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,30 +74,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="31" column="139" selection-start-line="31" selection-start-column="139" selection-end-line="31" selection-end-column="139" />
+            <state relative-caret-position="34">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Item.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/Item.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6905" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gilded-nor.iml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Inventory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="44" column="28" lean-forward="true" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
-              <folding>
-                <element signature="e#1169#1170#0" expanded="true" />
-                <element signature="e#1202#1203#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="731">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
             </state>
           </provider>
         </entry>
@@ -139,8 +164,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="199" />
-    <option name="y" value="20" />
+    <option name="x" value="69" />
+    <option name="y" value="116" />
     <option name="width" value="1612" />
     <option name="height" value="876" />
   </component>
@@ -157,19 +182,23 @@
         <subPane>
           <expand>
             <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="gilded-nor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gilded-nor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="gilded-nor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gilded-nor" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="gilded-nor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gilded-nor" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gilded-nor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -188,12 +217,12 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543677307195" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543679933666" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GildedRoseJavaKata" />
+    <property name="last_opened_file_path" value="C:/Program Files (x86)/Oracle/JavaFX Scene Builder 1.1/JavaFX Scene Builder 1.1.exe" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
@@ -324,10 +353,10 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.098614074" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.10074627" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -336,7 +365,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3281412" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -347,9 +376,8 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.329718" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32917964" />
       <window_info anchor="bottom" id="Terminal" order="14" />
-      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -360,6 +388,7 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Maven" order="10" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -378,32 +407,48 @@
     <entry file="file://$PROJECT_DIR$/src/sample/DexterityVest.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Elixir.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Sulfuras.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Item.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Item.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="731">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Inventory.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="44" column="28" lean-forward="true" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+        <state relative-caret-position="-6905" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gilded-nor.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
           <folding>
-            <element signature="e#1169#1170#0" expanded="true" />
-            <element signature="e#1202#1203#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="31" column="139" selection-start-line="31" selection-start-column="139" selection-end-line="31" selection-end-column="139" />
+        <state relative-caret-position="34">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Item.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
@@ -445,7 +490,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>10</last-edited>
+          <last-edited>11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
