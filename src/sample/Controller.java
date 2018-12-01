@@ -67,5 +67,10 @@ public class Controller implements Initializable {
         return result;
     }
 
+    public void update(){
+        this.inventory.updateQuality();
+        displayItemDetails(list.getSelectionModel().getSelectedItem());
+    }
+
 
 }
