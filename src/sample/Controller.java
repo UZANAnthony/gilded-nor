@@ -47,7 +47,7 @@ public class Controller implements Initializable {
         name.setText(item.getName());
         sellin.setText(String.valueOf(item.getSellIn()));
         quality.setText(String.valueOf(item.getQuality()));
-
+        type.setText(String.valueOf(item.getClass()));
     }
 
     public Item fetchItemByName(String name)
