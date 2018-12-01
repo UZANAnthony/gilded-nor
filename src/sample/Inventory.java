@@ -42,6 +42,11 @@ public class Inventory {
         return  list_tmp;
     }
 
+    public Item[] getItems()
+    {
+        return this.items;
+    }
+
 
     public void updateQuality() {
         for (Item item : items){

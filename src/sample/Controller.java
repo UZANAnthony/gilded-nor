@@ -24,18 +24,49 @@ public class Controller implements Initializable {
     @FXML
     TextField type;
 
+    public Inventory inventory;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         fetchInventory();
+        list.getSelectionModel().selectedItemProperty().addListener((e -> displayItemDetails(list.getSelectionModel().getSelectedItem())));
     }
 
     public void fetchInventory(){
-        Inventory inventory = new Inventory();
+        this.inventory = new Inventory();
         //inventory.printInventory();
         ObservableList<String> inventory_view;
         inventory_view = FXCollections.observableArrayList(inventory.toList());
         list.setItems(inventory_view);
     }
 
+
+    public void displayItemDetails(Object o)
+    {
+        String itemName = (String) o;
+        Item item = fetchItemByName(itemName);
+        name.setText(item.getName());
+        sellin.setText(item.getSellIn() + ""); // Triche pour convertir en string. ToString() et Cast ne fonctionnent pas
+        quality.setText(item.getQuality() + "");
+
+    }
+
+    public Item fetchItemByName(String name)
+    {
+        int i = 0;
+        boolean itemFound = false;
+        Item result = null;
+        while (i < this.inventory.getItems().length && itemFound == false)
+        {
+            if (this.inventory.getItems()[i].getName().equals(name))
+            {
+                itemFound = true;
+                result = this.inventory.getItems()[i];
+            }
+            i = i + 1;
+        }
+        return result;
+    }
 
 }
