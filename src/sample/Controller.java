@@ -45,8 +45,8 @@ public class Controller implements Initializable {
         String itemName = (String) o;
         Item item = fetchItemByName(itemName);
         name.setText(item.getName());
-        sellin.setText(item.getSellIn() + ""); // Triche pour convertir en string. ToString() et Cast ne fonctionnent pas
-        quality.setText(item.getQuality() + "");
+        sellin.setText(String.valueOf(item.getSellIn()));
+        quality.setText(String.valueOf(item.getQuality()));
 
     }
 
