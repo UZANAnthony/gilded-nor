@@ -9,5 +9,8 @@ public class AgedBrie extends Item{
         if (getQuality() < 50) {
             setQuality(getQuality() + 1);
         }
+        if(getSellIn() > 0) {
+            setSellIn(getSellIn() - 1);
+        }
     }
 }
