@@ -1,0 +1,104 @@
+[
+  {
+    "class": "DexterityVest",
+    "name": "+10 Dexterity Vest",
+    "sellIn": 20,
+    "quality": 20
+  },
+  {
+    "class": "DexterityVest",
+    "name": "+7 Dexterity Vest",
+    "sellIn": 5,
+    "quality": 15
+  },
+  {
+    "class": "DexterityVest",
+    "name": "+8 Dexterity Vest",
+    "sellIn": 25,
+    "quality": 17
+  },
+  {
+    "class": "AgedBrie",
+    "name": "Aged Brie",
+    "sellIn": 5,
+    "quality": 2
+  },
+  {
+    "class": "AgedBrie",
+    "name": "Aged Brie",
+    "sellIn": 8,
+    "quality": 5
+  },
+  {
+    "class": "Elixir",
+    "name": "Elixir of the Mongoose",
+    "sellIn": 10,
+    "quality": 2
+  },
+  {
+    "class": "Elixir",
+    "name": "Elixir of the Mongoose",
+    "sellIn": 8,
+    "quality": 5
+  },
+  {
+    "class": "Elixir",
+    "name": "Elixir of the Mongoose",
+    "sellIn": 25,
+    "quality": 17
+  },
+  {
+    "class": "Elixir",
+    "name": "Elixir of the Mongoose",
+    "sellIn": 5,
+    "quality": 15
+  },
+  {
+    "class": "Elixir",
+    "name": "Elixir of the Mongoose",
+    "sellIn": 8,
+    "quality": 5
+  },
+  {
+    "class": "Elixir",
+    "name": "Elixir of the Mongoose",
+    "sellIn": 8,
+    "quality": 5
+  },
+  {
+    "class": "Sulfuras",
+    "name": "Sulfuras, Hand of Ragnaros",
+    "sellIn": 20,
+    "quality": 20
+  },
+  {
+    "class": "Backstage",
+    "name": "Backstage passes to a TAFKAL80ETC concert",
+    "sellIn": 5,
+    "quality": 15
+  },
+  {
+    "class": "Backstage",
+    "name": "Backstage passes to a TAFKAL80ETC concert",
+    "sellIn": 20,
+    "quality": 20
+  },
+  {
+    "class": "Conjured",
+    "name": "Conjured Mana Cake",
+    "sellIn": 25,
+    "quality": 17
+  },
+  {
+    "class": "Conjured",
+    "name": "Conjured Mana Cake",
+    "sellIn": 10,
+    "quality": 2
+  },
+  {
+    "class": "Conjured",
+    "name": "Conjured Mana Cake",
+    "sellIn": 5,
+    "quality": 15
+  }
+]
