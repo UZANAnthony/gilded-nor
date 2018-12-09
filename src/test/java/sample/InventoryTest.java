@@ -25,21 +25,6 @@ public class InventoryTest {
 
     }
 
-    /*
-    @Test
-    public void testUpdateQualityWhenSellInFinished() throws Exception
-    {
-        inv.updateQuality();
-        Item[] items = inv.getItems();
-        for(int i = 0;i < items.length;i ++)
-        {
-            if (ancienneListeDesItems[i].getSellIn() == 0) {
-                assertEquals(ancienneListeDesItems[i].getQuality() - 2,items[i].getQuality());
-            }
-        }
-    }
-    */
-
     @Test
     public void testQualityIsNeverNegative() throws Exception
     {
@@ -69,24 +54,6 @@ public class InventoryTest {
             }
         }
     }
-
-    /*
-    @Test
-    public void testQualityNotMoreThan50() throws Exception
-    {
-        Item[] items;
-        int nbIterations = 10;
-        for (int i=0;i < nbIterations;i++)
-        {
-            inv.updateQuality();
-            items = inv.getItems();
-            for (int j=0;j < items.length;j++)
-            {
-                assertTrue(items[j].getQuality() <= 50);
-            }
-        }
-    }
-    */
 
     @Test
     public void testSulfurasNotDecreaseInQuality() throws Exception

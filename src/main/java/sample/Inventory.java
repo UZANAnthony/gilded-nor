@@ -22,7 +22,6 @@ public class Inventory {
                 new Backstage("Backstage passes to a TAFKAL80ETC concert", 15, 20),
                 new Conjured("Conjured Mana Cake", 3, 6),
         };
-
     }
 
     public void printInventory() {
