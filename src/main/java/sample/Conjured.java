@@ -6,11 +6,15 @@ public class Conjured extends Item{
     }
 
     public void update(){
-        if(getQuality() > 0){
+        if(getQuality() >= 2){
             setQuality(getQuality() - 2);
-            if (getSellIn() < 0){
+            if (getSellIn() == 0 && getQuality() >= 2){
                 setQuality(getQuality() - 2);
             }
+        }
+        if(getQuality() == 1) setQuality(0);
+        if(getSellIn() > 0) {
+            setSellIn(getSellIn() - 1);
         }
     }
 }
