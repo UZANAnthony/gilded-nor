@@ -20,7 +20,7 @@ public class Main extends Application {
         URL url = new File("src/main/resources/fxml/Item.fxml").toURL();
         Parent root = FXMLLoader.load(url);
         primaryStage.setTitle("Inventory");
-        primaryStage.setScene(new Scene(root, 600, 450));
+        primaryStage.setScene(new Scene(root, 900, 450));
         primaryStage.show();
     }
 

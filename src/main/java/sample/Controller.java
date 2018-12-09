@@ -3,6 +3,8 @@ package sample;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Side;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.collections.ObservableList;
@@ -23,13 +25,18 @@ public class Controller implements Initializable {
     TextField quality;
     @FXML
     TextField type;
+    @FXML
+    PieChart piechartItemCount;
 
     public Inventory inventory;
+    public ObservableList<PieChart.Data> itemFrequency;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         fetchInventory();
         list.getSelectionModel().selectedItemProperty().addListener((e -> displayItemDetails(list.getSelectionModel().getSelectedItem())));
+        itemFrequency = FXCollections.observableArrayList();
+        displayPiechart();
     }
 
     public void fetchInventory(){
@@ -72,5 +79,54 @@ public class Controller implements Initializable {
         displayItemDetails(list.getSelectionModel().getSelectedItem());
     }
 
+    public void displayPiechart()
+    {
+        initializeItemFrequency();
 
+        piechartItemCount.setData(itemFrequency);
+        piechartItemCount.setTitle("Item count");
+    }
+
+    public void initializeItemFrequency()
+    {
+        for (Item item : inventory.getItems())
+        {
+            String nameItem = item.getClass().getSimpleName();
+            boolean itemFound = false;
+            int i = 0;
+            while (i < itemFrequency.size() && itemFound == false)
+            {
+                if (nameItem.equals(itemFrequency.get(i).getName()))
+                {
+                    itemFound = true;
+                    itemFrequency.get(i).setPieValue(itemFrequency.get(i).getPieValue() + 1);
+                }
+                i = i + 1;
+            }
+            if (itemFound == false)
+            {
+                itemFrequency.add(new PieChart.Data(nameItem,1));
+            }
+        }
+    }
+
+    public void updateItemFrequency(Item newItem)
+    {
+        String nameItem = newItem.getClass().getSimpleName();
+        boolean itemFound = false;
+        int i = 0;
+        while (i < itemFrequency.size() && itemFound == false)
+        {
+            if (nameItem.equals(itemFrequency.get(i).getName()))
+            {
+                itemFound = true;
+                itemFrequency.get(i).setPieValue(itemFrequency.get(i).getPieValue() + 1);
+            }
+            i = i + 1;
+        }
+        if (itemFound == false)
+        {
+            itemFrequency.add(new PieChart.Data(nameItem,1));
+        }
+    }
 }
