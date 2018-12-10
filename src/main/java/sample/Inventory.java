@@ -74,32 +74,29 @@ public class Inventory {
             switch(type){
                 case "AgedBrie":
                     return new AgedBrie(name, sellIn, quality);
-                    break;
                 case "Backstage":
                     return new Backstage(name, sellIn, quality);
-                    break;
                 case "Conjured":
                     return new Conjured(name, sellIn, quality);
-                    break;
                 case "DexterityVest":
                     return new DexterityVest(name, sellIn, quality);
-                    break;
                 case "Elixir":
                     return new Elixir(name, sellIn, quality);
-                    break;
                 case "Sulfuras":
                     return new Sulfuras(name, sellIn, quality);
-                    break;
             }
         }
         return null;
     }
 
-    public void addItem(Item newI){
+    public Item[] addItem(Item newI){
         Item new_list[] = new Item[items.length + 1];
         for(int i = 0; i < items.length; i++){
             new_list[i] = items[i];
         }
         new_list[new_list.length - 1] = newI;
+        return  new_list;
     }
 }
+
+
