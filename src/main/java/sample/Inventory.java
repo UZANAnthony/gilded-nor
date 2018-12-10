@@ -94,4 +94,12 @@ public class Inventory {
         }
         return null;
     }
+
+    public void addItem(Item newI){
+        Item new_list[] = new Item[items.length + 1];
+        for(int i = 0; i < items.length; i++){
+            new_list[i] = items[i];
+        }
+        new_list[new_list.length - 1] = newI;
+    }
 }
