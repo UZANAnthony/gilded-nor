@@ -41,7 +41,10 @@ public class Controller implements Initializable {
 
     public void fetchInventory(){
         this.inventory = new Inventory();
-        //inventory.printInventory();
+        Elixir jdb = (Elixir) inventory.newItem("Elixir","Jus de bagarre", 20, 49);
+        inventory.addItem(jdb);
+        System.out.println(jdb.getName());
+        inventory.printInventory();
         ObservableList<String> inventory_view;
         inventory_view = FXCollections.observableArrayList(inventory.toList());
         list.setItems(inventory_view);

@@ -89,13 +89,16 @@ public class Inventory {
         return null;
     }
 
-    public Item[] addItem(Item newI){
-        Item new_list[] = new Item[items.length + 1];
+    public void addItem(Item newI){
+        Item tmp_list[] = new Item[items.length];
         for(int i = 0; i < items.length; i++){
-            new_list[i] = items[i];
+            tmp_list[i] = items[i];
         }
-        new_list[new_list.length - 1] = newI;
-        return  new_list;
+        items = new Item[tmp_list.length + 1];
+        for(int i = 0; i < tmp_list.length; i++){
+            items[i] = tmp_list[i];
+        }
+        items[items.length - 1] = newI;
     }
 }
 
