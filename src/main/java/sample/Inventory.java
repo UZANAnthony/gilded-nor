@@ -68,4 +68,30 @@ public class Inventory {
             item.update();
         }
     }
+
+    public Item newItem(String type, String name, int sellIn, int quality){
+        if (type != null){
+            switch(type){
+                case "AgedBrie":
+                    return new AgedBrie(name, sellIn, quality);
+                    break;
+                case "Backstage":
+                    return new Backstage(name, sellIn, quality);
+                    break;
+                case "Conjured":
+                    return new Conjured(name, sellIn, quality);
+                    break;
+                case "DexterityVest":
+                    return new DexterityVest(name, sellIn, quality);
+                    break;
+                case "Elixir":
+                    return new Elixir(name, sellIn, quality);
+                    break;
+                case "Sulfuras":
+                    return new Sulfuras(name, sellIn, quality);
+                    break;
+            }
+        }
+        return null;
+    }
 }
