@@ -1,17 +1,33 @@
 package sample;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.sun.javaws.jnl.XMLFormat;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Side;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.collections.ObservableList;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import org.json.*;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Iterator;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class Controller implements Initializable {
 
@@ -130,4 +146,54 @@ public class Controller implements Initializable {
             itemFrequency.add(new PieChart.Data(nameItem,1));
         }
     }
+
+    static public Item[] GetItemsFromJson(String filename) {
+
+        JSONParser parser = new JSONParser();
+
+        try {
+
+            FileReader fileReader = new FileReader(filename);
+            Object obj = parser.parse(fileReader);
+            JSONArray items = (JSONArray) obj;
+
+            Inventory Items = new Inventory();
+
+            for(Object o : items)
+            {
+                String line = o.toString();
+                System.out.println(line);
+                JsonObject item = new JsonParser().parse(line).getAsJsonObject();
+                //System.out.println(item);
+
+                String name = item.get("name").getAsString();
+                int sellin = item.get("sellIn").getAsInt();
+                int quality = item.get("quality").getAsInt();
+                String type = item.get("class").getAsString();
+
+                Item i = Items.newItem(type, name, sellin, quality);
+                Items.addItem(i);
+
+
+            }
+
+            return Items.getItems();
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return new Item[0];
+    }
+
+
+
+
+
+
 }

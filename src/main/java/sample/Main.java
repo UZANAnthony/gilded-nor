@@ -14,9 +14,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("../../resources/fxml/Item.fxml"));
-        */
+
+        //Parent root = FXMLLoader.load(getClass().getResource("../../resources/fxml/Item.fxml"));
+
         URL url = new File("src/main/resources/fxml/Item.fxml").toURL();
         Parent root = FXMLLoader.load(url);
         primaryStage.setTitle("Inventory");
