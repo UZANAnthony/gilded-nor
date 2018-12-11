@@ -1,31 +1,32 @@
 package sample;
 
+import sample.JSONReader;
+
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.sun.javaws.jnl.XMLFormat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.List;
 
-import org.json.*;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Iterator;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.TransferMode;
 
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -43,8 +44,16 @@ public class Controller implements Initializable {
     TextField type;
     @FXML
     PieChart piechartItemCount;
+    @FXML
+    ImageView dragBox;
+    @FXML
+    Label letgo;
 
-    public Inventory inventory;
+    Image DragOn = new Image("/fxml/DragOn.png");
+    Image DragOff = new Image("/fxml/DragOff.png");
+
+
+    public Inventory inventory = new Inventory();
     public ObservableList<PieChart.Data> itemFrequency;
 
     @Override
@@ -56,9 +65,6 @@ public class Controller implements Initializable {
     }
 
     public void fetchInventory(){
-        this.inventory = new Inventory();
-        //inventory.addItem(inventory.newItem("Elixir","Jus de bagarre", 20, 49));
-        //inventory.printInventory();
         ObservableList<String> inventory_view;
         inventory_view = FXCollections.observableArrayList(inventory.toList());
         list.setItems(inventory_view);
@@ -66,12 +72,14 @@ public class Controller implements Initializable {
 
     public void displayItemDetails(Object o)
     {
-        String itemName = (String) o;
-        Item item = fetchItemByName(itemName);
-        name.setText(item.getName());
-        sellin.setText(String.valueOf(item.getSellIn()));
-        quality.setText(String.valueOf(item.getQuality()));
-        type.setText(String.valueOf(item.getClass().getSimpleName()));
+        if (o != null){
+            String itemName = (String) o;
+            Item item = fetchItemByName(itemName);
+            name.setText(item.getName());
+            sellin.setText(String.valueOf(item.getSellIn()));
+            quality.setText(String.valueOf(item.getQuality()));
+            type.setText(item.getClass().getSimpleName());
+        }
     }
 
     public Item fetchItemByName(String name)
@@ -147,7 +155,7 @@ public class Controller implements Initializable {
         }
     }
 
-    static public Item[] GetItemsFromJson(String filename) {
+    static public Inventory GetItemsFromJson(String filename, Inventory Items) {
 
         JSONParser parser = new JSONParser();
 
@@ -157,14 +165,11 @@ public class Controller implements Initializable {
             Object obj = parser.parse(fileReader);
             JSONArray items = (JSONArray) obj;
 
-            Inventory Items = new Inventory();
 
             for(Object o : items)
             {
                 String line = o.toString();
-                System.out.println(line);
                 JsonObject item = new JsonParser().parse(line).getAsJsonObject();
-                //System.out.println(item);
 
                 String name = item.get("name").getAsString();
                 int sellin = item.get("sellIn").getAsInt();
@@ -173,12 +178,8 @@ public class Controller implements Initializable {
 
                 Item i = Items.newItem(type, name, sellin, quality);
                 Items.addItem(i);
-
-
             }
-
-            return Items.getItems();
-
+            return Items;
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -188,12 +189,31 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
 
-        return new Item[0];
+        return Items;
     }
 
+    @FXML
+    public void handleDragOver(DragEvent event){
+        if (event.getDragboard().hasFiles()){
+            event.acceptTransferModes(TransferMode.ANY);
+            dragBox.setImage(DragOn);
+            letgo.setVisible(true);
+        }
+    }
 
+    @FXML
+    public void handleDetectExitDrag(DragEvent event){
+        dragBox.setImage(DragOff);
+        letgo.setVisible(false);
+    }
 
-
-
-
+    @FXML
+    public void handleDrop(DragEvent event){
+        List<File> files = event.getDragboard().getFiles();
+        String file = files.get(0).toString();
+        inventory = GetItemsFromJson(file, inventory);
+        fetchInventory();
+        initializeItemFrequency();
+        displayPiechart();
+    }
 }
