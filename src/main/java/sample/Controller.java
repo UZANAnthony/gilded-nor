@@ -59,7 +59,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         fetchInventory();
-        list.getSelectionModel().selectedItemProperty().addListener((e -> displayItemDetails(list.getSelectionModel().getSelectedItem())));
+        list.getSelectionModel().selectedItemProperty().addListener((e -> displayItemDetails(list.getSelectionModel().getSelectedIndex())));
         itemFrequency = FXCollections.observableArrayList();
         displayPiechart();
     }
@@ -70,38 +70,24 @@ public class Controller implements Initializable {
         list.setItems(inventory_view);
     }
 
-    public void displayItemDetails(Object o)
+    public void displayItemDetails(int index)
     {
-        if (o != null){
-            String itemName = (String) o;
-            Item item = fetchItemByName(itemName);
+        try {
+            Item item = this.inventory.getItems()[index];
             name.setText(item.getName());
             sellin.setText(String.valueOf(item.getSellIn()));
             quality.setText(String.valueOf(item.getQuality()));
             type.setText(item.getClass().getSimpleName());
         }
-    }
-
-    public Item fetchItemByName(String name)
-    {
-        int i = 0;
-        boolean itemFound = false;
-        Item result = null;
-        while (i < this.inventory.getItems().length && itemFound == false)
+        catch (Exception e)
         {
-            if (this.inventory.getItems()[i].getName().equals(name))
-            {
-                itemFound = true;
-                result = this.inventory.getItems()[i];
-            }
-            i = i + 1;
+
         }
-        return result;
     }
 
     public void update(){
         this.inventory.updateQuality();
-        displayItemDetails(list.getSelectionModel().getSelectedItem());
+        displayItemDetails(list.getSelectionModel().getSelectedIndex());
     }
 
     public void displayPiechart()
