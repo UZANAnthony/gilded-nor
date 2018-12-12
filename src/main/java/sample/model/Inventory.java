@@ -1,6 +1,7 @@
 package sample.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Inventory {
@@ -14,13 +15,15 @@ public class Inventory {
 
     public Inventory() {
         super();
+
+        Date date = new Date();
         items = new Item[]{
-                new DexterityVest("+5 Dexterity Vest", 10, 20),
-                new AgedBrie("Aged Brie", 2, 0),
-                new Elixir("Elixir of the Mongoose", 5, 7),
-                new Sulfuras("Sulfuras, Hand of Ragnaros", 0, 80),
-                new Backstage("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Conjured("Conjured Mana Cake", 3, 6),
+                new DexterityVest(1,date,"+5 Dexterity Vest", 10, 20),
+                new AgedBrie(2, date, "Aged Brie", 2, 0),
+                new Elixir(3, date, "Elixir of the Mongoose", 5, 7),
+                new Sulfuras(4, date, "Sulfuras, Hand of Ragnaros", 0, 80),
+                new Backstage(5, date, "Backstage passes to a TAFKAL80ETC concert", 15, 20),
+                new Conjured(6, date,"Conjured Mana Cake", 3, 6),
         };
     }
 
@@ -69,21 +72,21 @@ public class Inventory {
         }
     }
 
-    public Item newItem(String type, String name, int sellIn, int quality){
+    public Item newItem(int ID, Date date, String type, String name, int sellIn, int quality){
         if (type != null){
             switch(type){
                 case "AgedBrie":
-                    return new AgedBrie(name, sellIn, quality);
+                    return new AgedBrie(ID, date, name, sellIn, quality);
                 case "Backstage":
-                    return new Backstage(name, sellIn, quality);
+                    return new Backstage(ID, date, name, sellIn, quality);
                 case "Conjured":
-                    return new Conjured(name, sellIn, quality);
+                    return new Conjured(ID, date, name, sellIn, quality);
                 case "DexterityVest":
-                    return new DexterityVest(name, sellIn, quality);
+                    return new DexterityVest(ID, date, name, sellIn, quality);
                 case "Elixir":
-                    return new Elixir(name, sellIn, quality);
+                    return new Elixir(ID, date, name, sellIn, quality);
                 case "Sulfuras":
-                    return new Sulfuras(name, sellIn, quality);
+                    return new Sulfuras(ID, date, name, sellIn, quality);
             }
         }
         return null;

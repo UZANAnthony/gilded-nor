@@ -1,8 +1,10 @@
 package sample.model;
 
+import java.util.Date;
+
 public class DexterityVest extends Item{
-    public DexterityVest(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+    public DexterityVest(int ID, Date date, String name, int sellIn, int quality) {
+        super(ID, date, name, sellIn, quality);
     }
 
     public void update(){

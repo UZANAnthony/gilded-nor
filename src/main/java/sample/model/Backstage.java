@@ -1,8 +1,10 @@
 package sample.model;
 
+import java.util.Date;
+
 public class Backstage extends Item{
-    public Backstage(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+    public Backstage(int ID, Date date, String name, int sellIn, int quality) {
+        super(ID, date, name, sellIn, quality);
     }
     public void update(){
         if (getQuality() < 50) {

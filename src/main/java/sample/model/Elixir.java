@@ -1,8 +1,10 @@
 package sample.model;
 
+import java.util.Date;
+
 public class Elixir extends Item{
-    public Elixir(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+    public Elixir(int ID, Date date, String name, int sellIn, int quality) {
+        super(ID, date, name, sellIn, quality);
     }
 
     public void update(){

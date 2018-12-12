@@ -1,8 +1,10 @@
 package sample.model;
 
+import java.util.Date;
+
 public class Conjured extends Item{
-    public Conjured(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+    public Conjured(int ID, Date date, String name, int sellIn, int quality) {
+        super(ID, date, name, sellIn, quality);
     }
 
     public void update(){
