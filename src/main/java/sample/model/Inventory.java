@@ -1,11 +1,11 @@
 package sample.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Inventory {
 
     private Item[] items;
+    private int[] sellInArray;
 
     public Inventory(Item[] items) {
         super();
@@ -100,6 +100,28 @@ public class Inventory {
         }
         items[items.length - 1] = newI;
     }
+
+    public void GetSellInArray(){
+        Hashtable<Integer, Boolean> sellInVal = new Hashtable<Integer, Boolean>();
+        for(int i = 0; i < items.length; i++){
+            if(!sellInVal.containsKey(items[i])){
+                sellInVal.put(items[i].getSellIn(), true);
+            }
+        }
+        Enumeration<Integer> keys = sellInVal.keys();
+        sellInArray = new int[sellInVal.keySet().size()];
+        for (int i = 0; i < sellInArray.length; i++){
+            sellInArray[i] = keys.nextElement();
+        }
+        for(int i = 0; i < sellInArray.length; i++){
+            System.out.println(sellInArray[i]);
+        }
+    }
+
+
+
+
+
 }
 
 
