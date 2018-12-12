@@ -132,12 +132,13 @@ public class InventoryTest {
     {
         Inventory inventory = new Inventory();
         Item[] items = inventory.getItems();
-
         Item itemConjured = items[5];
         assertThat(itemConjured.getName(),is("Conjured Mana Cake"));
         assertThat(itemConjured.getQuality(),is(6));
         inventory.updateQuality();
         assertThat(itemConjured.getQuality(),is(4));
     }
+
+
 
 }

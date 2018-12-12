@@ -30,6 +30,7 @@ import javafx.scene.input.TransferMode;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import sample.model.JSONReader;
 
 public class Controller implements Initializable {
 
@@ -142,43 +143,6 @@ public class Controller implements Initializable {
         }
     }
 
-    static public Inventory GetItemsFromJson(String filename, Inventory Items) {
-
-        JSONParser parser = new JSONParser();
-
-        try {
-
-            FileReader fileReader = new FileReader(filename);
-            Object obj = parser.parse(fileReader);
-            JSONArray items = (JSONArray) obj;
-
-
-            for(Object o : items)
-            {
-                String line = o.toString();
-                JsonObject item = new JsonParser().parse(line).getAsJsonObject();
-
-                String name = item.get("name").getAsString();
-                int sellin = item.get("sellIn").getAsInt();
-                int quality = item.get("quality").getAsInt();
-                String type = item.get("class").getAsString();
-
-                Item i = Items.newItem(type, name, sellin, quality);
-                Items.addItem(i);
-            }
-            return Items;
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return Items;
-    }
-
     @FXML
     public void handleDragOver(DragEvent event){
         if (event.getDragboard().hasFiles()){
@@ -198,7 +162,7 @@ public class Controller implements Initializable {
     public void handleDrop(DragEvent event){
         List<File> files = event.getDragboard().getFiles();
         String file = files.get(0).toString();
-        inventory = GetItemsFromJson(file, inventory);
+        inventory = JSONReader.GetItemsFromJson(file, inventory);
         fetchInventory();
         initializeItemFrequency();
         displayPiechart();
