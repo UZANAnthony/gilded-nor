@@ -3,6 +3,8 @@ package sample;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import sample.model.Inventory;
+import sample.model.Item;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;

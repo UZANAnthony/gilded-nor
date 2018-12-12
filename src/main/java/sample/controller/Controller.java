@@ -1,6 +1,7 @@
-package sample;
+package sample.controller;
 
-import sample.JSONReader;
+import sample.model.Inventory;
+import sample.model.Item;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
