@@ -13,22 +13,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="DragBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDropped="#handleDrop" onDragExited="#handleDetectExitDrag" onDragOver="#handleDragOver" prefHeight="400.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.controller.Controller">
+<AnchorPane id="DragBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDropped="#handleDrop" onDragExited="#handleDetectExitDrag" onDragOver="#handleDragOver" prefHeight="470.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
   <children>
     <ListView fx:id="list" layoutX="37.0" layoutY="48.0" prefHeight="322.0" prefWidth="256.0" />
     <Label layoutX="37.0" layoutY="20.0" text="Items' List" />
     <Label layoutX="336.0" layoutY="20.0" text="Item Details" />
-    <Label layoutX="336.0" layoutY="48.0" text="Type" />
-    <Label layoutX="335.0" layoutY="106.0" text="Name" />
-    <Label layoutX="335.0" layoutY="165.0" text="Sell In" />
-    <Label layoutX="337.0" layoutY="231.0" text="Quality" />
-    <TextField fx:id="type" layoutX="335.0" layoutY="65.0" prefWidth="211.0" />
-    <TextField fx:id="name" layoutX="335.0" layoutY="133.0" prefWidth="211.0" />
-    <TextField fx:id="sellin" layoutX="335.0" layoutY="193.0" prefWidth="211.0" />
-    <TextField fx:id="quality" layoutX="335.0" layoutY="267.0" prefWidth="211.0" />
-    <Button layoutX="336.0" layoutY="350.0" mnemonicParsing="false" onAction="#update" text="Update" />
+    <Label layoutX="339.0" layoutY="166.0" text="Type" />
+    <Label layoutX="337.0" layoutY="235.0" text="Name" />
+    <Label layoutX="336.0" layoutY="309.0" text="Sell In" />
+    <Label layoutX="334.0" layoutY="380.0" text="Quality" />
+    <TextField fx:id="type" layoutX="335.0" layoutY="196.0" prefWidth="211.0" />
+    <TextField fx:id="name" layoutX="335.0" layoutY="267.0" prefWidth="211.0" />
+    <TextField fx:id="sellin" layoutX="335.0" layoutY="337.0" prefWidth="211.0" />
+    <TextField fx:id="quality" layoutX="335.0" layoutY="404.0" prefWidth="211.0" />
+    <Button layoutX="37.0" layoutY="384.0" mnemonicParsing="false" onAction="#update" text="Update" />
     <PieChart fx:id="piechartItemCount" labelLineLength="10.0" labelsVisible="false" layoutX="579.0" layoutY="28.0" prefHeight="342.0" prefWidth="307.0" />
-    <ImageView fx:id="dragBox" fitHeight="59.0" fitWidth="59.0" layoutX="450.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="dragBox" fitHeight="59.0" fitWidth="59.0" layoutX="234.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@DragOff.png" />
       </image>
@@ -38,5 +38,9 @@
         <Font name="Arial Bold" size="12.0" />
       </font>
     </Label>
+      <TextField fx:id="date" layoutX="335.0" layoutY="126.0" prefWidth="211.0" />
+      <Label layoutX="336.0" layoutY="98.0" text="Creation date" />
+      <TextField fx:id="itemID" layoutX="356.0" layoutY="56.0" prefHeight="27.0" prefWidth="73.0" />
+      <Label layoutX="335.0" layoutY="61.0" text="ID: " />
   </children>
 </AnchorPane>

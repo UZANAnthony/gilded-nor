@@ -37,6 +37,10 @@ public class Controller implements Initializable {
     @FXML
     ListView list;
     @FXML
+    TextField itemID;
+    @FXML
+    TextField date;
+    @FXML
     TextField name;
     @FXML
     TextField sellin;
@@ -76,6 +80,8 @@ public class Controller implements Initializable {
     {
         try {
             Item item = this.inventory.getItems()[index];
+            itemID.setText(String.valueOf(item.getID()));
+            date.setText(String.valueOf(item.getDate()));
             name.setText(item.getName());
             sellin.setText(String.valueOf(item.getSellIn()));
             quality.setText(String.valueOf(item.getQuality()));

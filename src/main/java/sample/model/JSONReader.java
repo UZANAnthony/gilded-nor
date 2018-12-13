@@ -15,11 +15,13 @@ import java.util.Date;
 
 public class JSONReader {
 
+    /*
     public static void main(String[] args)
     {
         Inventory inv = new Inventory();
         GetItemsFromJson("newItems.json", inv);
     }
+    */
 
     static public Inventory GetItemsFromJson(String filename, Inventory Items) {
 
@@ -47,7 +49,7 @@ public class JSONReader {
 
                 Item i = Items.newItem(id, CreationDate, type, name, sellin, quality);
                 Items.addItem(i);
-                System.out.println(i.toString());
+                //System.out.println(i.toString());
 
             }
 
