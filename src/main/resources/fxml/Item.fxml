@@ -44,10 +44,10 @@
     <Label layoutX="335.0" layoutY="61.0" text="ID: " />
     <BarChart fx:id="barchart2" layoutX="449.0" layoutY="458.0" prefHeight="322.0" prefWidth="385.0">
       <xAxis>
-        <CategoryAxis side="BOTTOM" />
+        <CategoryAxis side="BOTTOM" fx:id="xAxis" />
       </xAxis>
       <yAxis>
-        <NumberAxis side="LEFT" />
+        <NumberAxis side="LEFT" fx:id="yAxis"/>
       </yAxis>
     </BarChart>
   </children>

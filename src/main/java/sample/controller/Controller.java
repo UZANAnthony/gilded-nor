@@ -65,6 +65,10 @@ public class Controller implements Initializable {
     Label letgo;
     @FXML
     BarChart barchart2;
+    @FXML
+    CategoryAxis xAxis ;
+    @FXML
+    NumberAxis yAxis ;
 
     Image DragOn = new Image("/fxml/DragOn.png");
     Image DragOff = new Image("/fxml/DragOff.png");
@@ -162,7 +166,13 @@ public class Controller implements Initializable {
     }
 
     public void setBarchart2(){
+        xAxis = new CategoryAxis();
+        xAxis.setLabel("Date");
+        yAxis = new NumberAxis();
+        yAxis.setLabel("Number of items");
+
         XYChart.Series dataSeries1 = new XYChart.Series();
+        dataSeries1.setName("Items");
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         ArrayList<Integer> numberDate = new ArrayList<>();
         ArrayList<String> listDate = new ArrayList<>();
@@ -175,7 +185,6 @@ public class Controller implements Initializable {
                 listDate.add(dateFormat.format(item.getDate()));
             }
         }
-
         for (int i = 0; i < listDate.size(); i++){
             dataSeries1.getData().add(new XYChart.Data(listDate.get(i), numberDate.get(i)));
         }
