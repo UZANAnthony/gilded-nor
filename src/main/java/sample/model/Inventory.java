@@ -5,7 +5,7 @@ import java.util.*;
 public class Inventory {
 
     private Item[] items;
-    private int[] sellInArray;
+    private Hashtable<Integer, Integer> sellInHT;
 
     public Inventory(Item[] items) {
         super();
@@ -20,7 +20,7 @@ public class Inventory {
                 new Elixir("Elixir of the Mongoose", 5, 7),
                 new Sulfuras("Sulfuras, Hand of Ragnaros", 0, 80),
                 new Backstage("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Conjured("Conjured Mana Cake", 3, 6),
+                new Conjured("Conjured Mana Cake", 3, 6)
         };
     }
 
@@ -101,21 +101,17 @@ public class Inventory {
         items[items.length - 1] = newI;
     }
 
-    public void GetSellInArray(){
-        Hashtable<Integer, Boolean> sellInVal = new Hashtable<Integer, Boolean>();
+    public void GetSellInStat(){
+        sellInHT = new Hashtable<>();
         for(int i = 0; i < items.length; i++){
-            if(!sellInVal.containsKey(items[i])){
-                sellInVal.put(items[i].getSellIn(), true);
+            if(!sellInHT.containsKey(items[i].getSellIn())){
+                sellInHT.put(items[i].getSellIn(), 1);
+            }
+            else{
+                sellInHT.put(items[i].getSellIn(), sellInHT.get(items[i].getSellIn())+1);
             }
         }
-        Enumeration<Integer> keys = sellInVal.keys();
-        sellInArray = new int[sellInVal.keySet().size()];
-        for (int i = 0; i < sellInArray.length; i++){
-            sellInArray[i] = keys.nextElement();
-        }
-        for(int i = 0; i < sellInArray.length; i++){
-            System.out.println(sellInArray[i]);
-        }
+        //System.out.println(sellInHT);
     }
 
 
