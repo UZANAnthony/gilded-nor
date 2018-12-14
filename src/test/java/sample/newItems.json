@@ -1,111 +1,95 @@
 [
   {
-    "ID" : 7,
     "class": "DexterityVest",
     "name": "+10 Dexterity Vest",
     "sellIn": 20,
     "quality": 20
   },
   {
-    "ID" : 8,
     "class": "DexterityVest",
     "name": "+7 Dexterity Vest",
     "sellIn": 5,
     "quality": 15
   },
   {
-    "ID" : 9,
     "class": "DexterityVest",
     "name": "+8 Dexterity Vest",
     "sellIn": 25,
     "quality": 17
   },
   {
-    "ID" : 10,
     "class": "AgedBrie",
     "name": "Aged Brie",
     "sellIn": 5,
     "quality": 2
   },
   {
-    "ID" : 11,
     "class": "AgedBrie",
     "name": "Aged Brie",
     "sellIn": 8,
     "quality": 5
   },
   {
-    "ID" : 12,
     "class": "Elixir",
     "name": "Elixir of the Mongoose",
     "sellIn": 10,
     "quality": 2
   },
   {
-    "ID" : 13,
     "class": "Elixir",
     "name": "Elixir of the Mongoose",
     "sellIn": 8,
     "quality": 5
   },
   {
-    "ID" : 14,
     "class": "Elixir",
     "name": "Elixir of the Mongoose",
     "sellIn": 25,
     "quality": 17
   },
   {
-    "ID" : 15,
     "class": "Elixir",
     "name": "Elixir of the Mongoose",
     "sellIn": 5,
     "quality": 15
   },
   {
-    "ID" : 16,
     "class": "Elixir",
     "name": "Elixir of the Mongoose",
     "sellIn": 8,
     "quality": 5
   },
   {
-    "ID" : 17,
     "class": "Elixir",
     "name": "Elixir of the Mongoose",
     "sellIn": 8,
     "quality": 5
   },
   {
-    "ID" : 18,
     "class": "Backstage",
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "sellIn": 5,
     "quality": 15
   },
   {
-    "ID" : 19,
     "class": "Backstage",
     "name": "Backstage passes to a TAFKAL80ETC concert",
     "sellIn": 20,
     "quality": 20
   },
   {
-    "ID" : 20,
     "class": "Conjured",
     "name": "Conjured Mana Cake",
     "sellIn": 25,
     "quality": 17
   },
   {
-    "ID" : 21,
     "class": "Conjured",
     "name": "Conjured Mana Cake",
     "sellIn": 10,
     "quality": 2
   },
   {
-    "ID" : 22,
     "class": "Conjured",
     "name": "Conjured Mana Cake",
     "sellIn": 5,
