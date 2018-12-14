@@ -69,7 +69,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         fetchInventory();
-        //inventory.GetSellInStat();
+        inventory.GetSellInStat();
         list.getSelectionModel().selectedItemProperty().addListener((e -> displayItemDetails(list.getSelectionModel().getSelectedIndex())));
         itemFrequency = FXCollections.observableArrayList();
         displayPiechart();
@@ -157,12 +157,15 @@ public class Controller implements Initializable {
     void displayBarchart_1(){
         XYChart.Series set = new XYChart.Series();
 
-        ArrayList<Integer> x = inventory.getKeys();
+        ArrayList<String> x = inventory.getKeys();
         ArrayList<Integer> y = inventory.getValues();
 
-        //for(int i = 0; i < 2; i++){
-            set.getData().add(new XYChart.Data("2", 1));
-        //}
+        //System.out.println(inventory.getKeys());
+
+
+        for(int i = 0; i < 5; i++){
+            set.getData().add(new XYChart.Data(x.get(i), y.get(i)));
+        }
         SellinChart.getData().add(set);
     }
 

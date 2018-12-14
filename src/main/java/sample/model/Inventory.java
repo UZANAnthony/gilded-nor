@@ -140,7 +140,7 @@ public class Inventory {
         }
         //System.out.println(sellInHT);
         keys = Collections.list(sellInHT.keys());
-        values = new ArrayList<Integer>(sellInHT.values());
+        values = new ArrayList<>(sellInHT.values());
         //System.out.println(keys.toString());
         //System.out.println(values.toString());
     }
