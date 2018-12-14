@@ -1,5 +1,7 @@
 package sample.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,15 +17,13 @@ public class Inventory {
 
     public Inventory() {
         super();
-
-        Date date = new Date();
         items = new Item[]{
-                new DexterityVest(1,date,"+5 Dexterity Vest", 10, 20),
-                new AgedBrie(2, date, "Aged Brie", 2, 0),
-                new Elixir(3, date, "Elixir of the Mongoose", 5, 7),
-                new Sulfuras(4, date, "Sulfuras, Hand of Ragnaros", 0, 80),
-                new Backstage(5, date, "Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Conjured(6, date,"Conjured Mana Cake", 3, 6),
+                new DexterityVest(1,StringToDate("06/12/2018"),"+5 Dexterity Vest", 10, 20),
+                new AgedBrie(2, StringToDate("06/12/2018"), "Aged Brie", 2, 0),
+                new Elixir(3, StringToDate("07/12/2018"), "Elixir of the Mongoose", 5, 7),
+                new Sulfuras(4, StringToDate("12/01/2018"), "Sulfuras, Hand of Ragnaros", 0, 80),
+                new Backstage(5, StringToDate("12/01/2018"), "Backstage passes to a TAFKAL80ETC concert", 15, 20),
+                new Conjured(6, StringToDate("06/12/2018"),"Conjured Mana Cake", 3, 6),
         };
     }
 
@@ -35,7 +35,20 @@ public class Inventory {
         System.out.println("***************");
         System.out.println("\n");
     }
+    public Date StringToDate(String s){
 
+        Date result = null;
+        try{
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            result  = dateFormat.parse(s);
+        }
+
+        catch(ParseException e){
+            e.printStackTrace();
+
+        }
+        return result ;
+    }
     public List<String> toList(){
         List<String> list_tmp = new ArrayList<>();
         for (Item item : items){
@@ -103,6 +116,8 @@ public class Inventory {
         }
         items[items.length - 1] = newI;
     }
+
 }
+
 
 
