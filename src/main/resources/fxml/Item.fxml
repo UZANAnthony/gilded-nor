@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="DragBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDropped="#handleDrop" onDragExited="#handleDetectExitDrag" onDragOver="#handleDragOver" prefHeight="760.0" prefWidth="857.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.controller.Controller">
+<AnchorPane id="DragBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDropped="#handleDrop" onDragExited="#handleDetectExitDrag" onDragOver="#handleDragOver" prefHeight="793.0000999999975" prefWidth="857.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.controller.Controller">
   <children>
     <ListView fx:id="list" layoutX="37.0" layoutY="48.0" prefHeight="322.0" prefWidth="256.0" />
     <Label layoutX="37.0" layoutY="20.0" text="Items' List" />
@@ -42,7 +42,7 @@
     <Label layoutX="336.0" layoutY="98.0" text="Creation date" />
     <TextField fx:id="itemID" layoutX="356.0" layoutY="56.0" prefHeight="27.0" prefWidth="73.0" />
     <Label layoutX="335.0" layoutY="61.0" text="ID: " />
-    <BarChart fx:id="barchart2" layoutX="429.0" layoutY="449.0" prefHeight="297.0" prefWidth="393.0">
+    <BarChart fx:id="barchart2" layoutX="449.0" layoutY="458.0" prefHeight="322.0" prefWidth="385.0">
       <xAxis>
         <CategoryAxis side="BOTTOM" />
       </xAxis>

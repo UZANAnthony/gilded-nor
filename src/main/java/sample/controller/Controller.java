@@ -1,5 +1,6 @@
 package sample.controller;
 
+import javafx.scene.chart.BarChart;
 import sample.model.Inventory;
 import sample.model.Item;
 
@@ -14,11 +15,19 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
+import java.lang.reflect.Array;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.List;
 
@@ -54,6 +63,8 @@ public class Controller implements Initializable {
     ImageView dragBox;
     @FXML
     Label letgo;
+    @FXML
+    BarChart barchart2;
 
     Image DragOn = new Image("/fxml/DragOn.png");
     Image DragOff = new Image("/fxml/DragOff.png");
@@ -68,6 +79,7 @@ public class Controller implements Initializable {
         list.getSelectionModel().selectedItemProperty().addListener((e -> displayItemDetails(list.getSelectionModel().getSelectedIndex())));
         itemFrequency = FXCollections.observableArrayList();
         displayPiechart();
+        setBarchart2();
     }
 
     public void fetchInventory(){
@@ -149,6 +161,27 @@ public class Controller implements Initializable {
         }
     }
 
+    public void setBarchart2(){
+        XYChart.Series dataSeries1 = new XYChart.Series();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        ArrayList<Integer> numberDate = new ArrayList<>();
+        ArrayList<String> listDate = new ArrayList<>();
+        for (Item item : inventory.getItems()){
+            if(listDate.contains(dateFormat.format(item.getDate()))){
+                numberDate.set(listDate.indexOf(dateFormat.format(item.getDate())), numberDate.get(listDate.indexOf(dateFormat.format(item.getDate()))) + 1);
+            }
+            else{
+                numberDate.add(1);
+                listDate.add(dateFormat.format(item.getDate()));
+            }
+        }
+
+        for (int i = 0; i < listDate.size(); i++){
+            dataSeries1.getData().add(new XYChart.Data(listDate.get(i), numberDate.get(i)));
+        }
+        barchart2.getData().add(dataSeries1);
+    }
+
     @FXML
     public void handleDragOver(DragEvent event){
         if (event.getDragboard().hasFiles()){
@@ -172,5 +205,6 @@ public class Controller implements Initializable {
         fetchInventory();
         initializeItemFrequency();
         displayPiechart();
+        setBarchart2();
     }
 }

@@ -21,9 +21,9 @@ public class Inventory {
                 new DexterityVest(1,StringToDate("06/12/2018"),"+5 Dexterity Vest", 10, 20),
                 new AgedBrie(2, StringToDate("06/12/2018"), "Aged Brie", 2, 0),
                 new Elixir(3, StringToDate("07/12/2018"), "Elixir of the Mongoose", 5, 7),
-                new Sulfuras(4, StringToDate("12/01/2018"), "Sulfuras, Hand of Ragnaros", 0, 80),
-                new Backstage(5, StringToDate("12/01/2018"), "Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Conjured(6, StringToDate("06/12/2018"),"Conjured Mana Cake", 3, 6),
+                new Sulfuras(4, StringToDate("11/12/2018"), "Sulfuras, Hand of Ragnaros", 0, 80),
+                new Backstage(5, StringToDate("11/12/2018"), "Backstage passes to a TAFKAL80ETC concert", 15, 20),
+                new Conjured(6, StringToDate("11/12/2018"),"Conjured Mana Cake", 3, 6),
         };
     }
 
@@ -49,6 +49,7 @@ public class Inventory {
         }
         return result ;
     }
+
     public List<String> toList(){
         List<String> list_tmp = new ArrayList<>();
         for (Item item : items){
