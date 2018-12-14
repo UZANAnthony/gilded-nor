@@ -5,8 +5,8 @@ import java.util.*;
 public class Inventory {
 
     private Item[] items;
-    private Hashtable<Integer, Integer> sellInHT;
-    private ArrayList<Integer> keys;
+    private Hashtable<String, Integer> sellInHT;
+    private ArrayList<String> keys;
     private ArrayList<Integer> values;
 
     public ArrayList<Integer> getValues() {
@@ -17,19 +17,19 @@ public class Inventory {
         this.values = values;
     }
 
-    public ArrayList<Integer> getKeys() {
+    public ArrayList<String> getKeys() {
         return keys;
     }
 
-    public void setKeys(ArrayList<Integer> keys) {
+    public void setKeys(ArrayList<String> keys) {
         this.keys = keys;
     }
 
-    public Hashtable<Integer, Integer> getSellInHT() {
+    public Hashtable<String, Integer> getSellInHT() {
         return sellInHT;
     }
 
-    public void setSellInHT(Hashtable<Integer, Integer> sellInHT) {
+    public void setSellInHT(Hashtable<String, Integer> sellInHT) {
         this.sellInHT = sellInHT;
     }
 
@@ -131,10 +131,11 @@ public class Inventory {
         sellInHT = new Hashtable<>();
         for(int i = 0; i < items.length; i++){
             if(!sellInHT.containsKey(items[i].getSellIn())){
-                sellInHT.put(items[i].getSellIn(), 1);
+                //String tmp = String.valueOf(items[i].getSellIn());
+                sellInHT.put(String.valueOf(items[i].getSellIn()), 1);
             }
             else{
-                sellInHT.put(items[i].getSellIn(), sellInHT.get(items[i].getSellIn())+1);
+                sellInHT.put(String.valueOf(items[i].getSellIn()), sellInHT.get(items[i].getSellIn())+1);
             }
         }
         //System.out.println(sellInHT);
