@@ -108,6 +108,7 @@ public class Controller implements Initializable {
 
     public void initializeItemFrequency()
     {
+        itemFrequency = FXCollections.observableArrayList();
         for (Item item : inventory.getItems())
         {
             String nameItem = item.getClass().getSimpleName();
