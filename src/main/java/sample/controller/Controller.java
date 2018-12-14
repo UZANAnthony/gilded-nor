@@ -1,5 +1,6 @@
 package sample.controller;
 
+import javafx.scene.chart.*;
 import sample.model.Inventory;
 import sample.model.Item;
 
@@ -9,7 +10,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -19,6 +19,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.List;
 
@@ -50,6 +51,13 @@ public class Controller implements Initializable {
     ImageView dragBox;
     @FXML
     Label letgo;
+    @FXML
+    BarChart<?, ?> SellinChart;
+    @FXML
+    CategoryAxis x;
+    @FXML
+    NumberAxis y;
+
 
     Image DragOn = new Image("/fxml/DragOn.png");
     Image DragOff = new Image("/fxml/DragOff.png");
@@ -65,6 +73,7 @@ public class Controller implements Initializable {
         list.getSelectionModel().selectedItemProperty().addListener((e -> displayItemDetails(list.getSelectionModel().getSelectedIndex())));
         itemFrequency = FXCollections.observableArrayList();
         displayPiechart();
+        displayBarchart_1();
     }
 
     public void fetchInventory(){
@@ -92,6 +101,7 @@ public class Controller implements Initializable {
         this.inventory.updateQuality();
         displayItemDetails(list.getSelectionModel().getSelectedIndex());
     }
+
 
     public void displayPiechart()
     {
@@ -142,6 +152,18 @@ public class Controller implements Initializable {
         {
             itemFrequency.add(new PieChart.Data(nameItem,1));
         }
+    }
+
+    void displayBarchart_1(){
+        XYChart.Series set = new XYChart.Series();
+
+        ArrayList<Integer> x = inventory.getKeys();
+        ArrayList<Integer> y = inventory.getValues();
+
+        //for(int i = 0; i < 2; i++){
+            set.getData().add(new XYChart.Data("2", 1));
+        //}
+        SellinChart.getData().add(set);
     }
 
     @FXML

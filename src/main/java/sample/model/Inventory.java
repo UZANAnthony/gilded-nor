@@ -6,6 +6,32 @@ public class Inventory {
 
     private Item[] items;
     private Hashtable<Integer, Integer> sellInHT;
+    private ArrayList<Integer> keys;
+    private ArrayList<Integer> values;
+
+    public ArrayList<Integer> getValues() {
+        return values;
+    }
+
+    public void setValues(ArrayList<Integer> values) {
+        this.values = values;
+    }
+
+    public ArrayList<Integer> getKeys() {
+        return keys;
+    }
+
+    public void setKeys(ArrayList<Integer> keys) {
+        this.keys = keys;
+    }
+
+    public Hashtable<Integer, Integer> getSellInHT() {
+        return sellInHT;
+    }
+
+    public void setSellInHT(Hashtable<Integer, Integer> sellInHT) {
+        this.sellInHT = sellInHT;
+    }
 
     public Inventory(Item[] items) {
         super();
@@ -112,6 +138,10 @@ public class Inventory {
             }
         }
         //System.out.println(sellInHT);
+        keys = Collections.list(sellInHT.keys());
+        values = new ArrayList<Integer>(sellInHT.values());
+        //System.out.println(keys.toString());
+        //System.out.println(values.toString());
     }
 
 
