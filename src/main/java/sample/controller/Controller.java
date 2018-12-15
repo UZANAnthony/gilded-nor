@@ -18,10 +18,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
+import java.math.BigDecimal;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-import java.util.List;
+import java.util.*;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -154,19 +153,24 @@ public class Controller implements Initializable {
         }
     }
 
-    void displayBarchart_1(){
-        XYChart.Series set = new XYChart.Series();
+    public void displayBarchart_1(){
+        //XYChart.Series set = new XYChart.Series();
 
-        ArrayList<String> x = inventory.getKeys();
-        ArrayList<Integer> y = inventory.getValues();
+        //ArrayList<String> x = inventory.getKeys();
+        //ArrayList<Integer> y = inventory.getValues();
 
         //System.out.println(inventory.getKeys());
 
 
-        for(int i = 0; i < 5; i++){
-            set.getData().add(new XYChart.Data(x.get(i), y.get(i)));
-        }
-        SellinChart.getData().add(set);
+       // for(int i = 0; i < 5; i++){
+       //     set.getData().add(new XYChart.Data(x.get(i), y.get(i)));
+        //}
+
+        //set.getData().sort((a, b) -> Integer.compare(b, a));
+
+
+        //set.getData().sorted(Comparator.reverseOrder());
+        //SellinChart.getData().add(set);
     }
 
     @FXML

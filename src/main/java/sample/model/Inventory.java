@@ -5,7 +5,6 @@ import java.util.*;
 public class Inventory {
 
     private Item[] items;
-    private Hashtable<String, Integer> sellInHT;
     private ArrayList<String> keys;
     private ArrayList<Integer> values;
 
@@ -128,19 +127,25 @@ public class Inventory {
     }
 
     public void GetSellInStat(){
-        sellInHT = new Hashtable<>();
+        TreeMap<Integer, Integer> map = new TreeMap<>();
         for(int i = 0; i < items.length; i++){
-            if(!sellInHT.containsKey(items[i].getSellIn())){
-                //String tmp = String.valueOf(items[i].getSellIn());
-                sellInHT.put(String.valueOf(items[i].getSellIn()), 1);
+            if(!map.containsKey(items[i].getSellIn())){
+                map.put(items[i].getSellIn(), 1);
             }
             else{
-                sellInHT.put(String.valueOf(items[i].getSellIn()), sellInHT.get(items[i].getSellIn())+1);
+                map.put(items[i].getSellIn(), map.get(items[i].getSellIn())+1);
             }
         }
-        //System.out.println(sellInHT);
-        keys = Collections.list(sellInHT.keys());
-        values = new ArrayList<>(sellInHT.values());
+
+        System.out.println(map);
+        //keys = Collections.list(sellInLHM.keySet());
+
+
+
+        //List sortedKeys=new ArrayList(sellInLHM.keySet());
+        //Collections.sort(sortedKeys);
+
+        //values = new ArrayList<>(sellInLHM.values());
         //System.out.println(keys.toString());
         //System.out.println(values.toString());
     }
