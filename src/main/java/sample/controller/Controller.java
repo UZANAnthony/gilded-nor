@@ -1,6 +1,10 @@
 package sample.controller;
 
+
 import javafx.scene.chart.BarChart;
+
+import javafx.scene.chart.*;
+
 import sample.model.Inventory;
 import sample.model.Item;
 
@@ -10,7 +14,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -23,6 +26,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
+
 import java.lang.reflect.Array;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -30,6 +34,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.List;
+
+import java.math.BigDecimal;
+import java.net.URL;
+import java.util.*;
+
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -69,6 +78,13 @@ public class Controller implements Initializable {
     CategoryAxis xAxis ;
     @FXML
     NumberAxis yAxis ;
+    @FXML
+    BarChart<?, ?> SellinChart;
+    @FXML
+    CategoryAxis x;
+    @FXML
+    NumberAxis y;
+
 
     Image DragOn = new Image("/fxml/DragOn.png");
     Image DragOff = new Image("/fxml/DragOff.png");
@@ -80,10 +96,12 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         fetchInventory();
+        //inventory.GetSellInStat();
         list.getSelectionModel().selectedItemProperty().addListener((e -> displayItemDetails(list.getSelectionModel().getSelectedIndex())));
         itemFrequency = FXCollections.observableArrayList();
         displayPiechart();
         setBarchart2();
+        displayBarchart_1();
     }
 
     public void fetchInventory(){
@@ -112,7 +130,9 @@ public class Controller implements Initializable {
     public void update(){
         this.inventory.updateQuality();
         displayItemDetails(list.getSelectionModel().getSelectedIndex());
+        displayBarchart_1();
     }
+
 
     public void displayPiechart()
     {
@@ -191,6 +211,23 @@ public class Controller implements Initializable {
         barchart2.getData().add(dataSeries1);
     }
 
+    public void displayBarchart_1(){
+        SellinChart.getData().removeAll(Collections.singleton(SellinChart.getData().setAll()));
+        inventory.GetSellInStat();
+        XYChart.Series set = new XYChart.Series();
+
+        ArrayList<String> x = inventory.getKeys();
+        ArrayList<Integer> y = inventory.getValues();
+
+        //System.out.println(inventory.getKeys());
+
+        for(int i = 0; i < x.size(); i++){
+            set.getData().add(new XYChart.Data(x.get(i), y.get(i)));
+        }
+
+        SellinChart.getData().add(set);
+    }
+
     @FXML
     public void handleDragOver(DragEvent event){
         if (event.getDragboard().hasFiles()){
@@ -215,5 +252,6 @@ public class Controller implements Initializable {
         initializeItemFrequency();
         displayPiechart();
         setBarchart2();
+        displayBarchart_1();
     }
 }

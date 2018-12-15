@@ -5,10 +5,30 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.*;
 
 public class Inventory {
 
     private Item[] items;
+    private ArrayList<String> keys;
+    private ArrayList<Integer> values;
+
+    public ArrayList<Integer> getValues() {
+        return values;
+    }
+
+    public void setValues(ArrayList<Integer> values) {
+        this.values = values;
+    }
+
+    public ArrayList<String> getKeys() {
+        return keys;
+    }
+
+    public void setKeys(ArrayList<String> keys) {
+        this.keys = keys;
+    }
+
 
     public Inventory(Item[] items) {
         super();
@@ -24,6 +44,14 @@ public class Inventory {
                 new Sulfuras(4, StringToDate("11/12/2018"), "Sulfuras, Hand of Ragnaros", 0, 80),
                 new Backstage(5, StringToDate("11/12/2018"), "Backstage passes to a TAFKAL80ETC concert", 15, 20),
                 new Conjured(6, StringToDate("11/12/2018"),"Conjured Mana Cake", 3, 6),
+                /*new DexterityVest("+5 Dexterity Vest", 10, 20),
+                new AgedBrie("Aged Brie", 2, 0),
+                new Elixir("Elixir of the Mongoose", 5, 7),
+                new Sulfuras("Sulfuras, Hand of Ragnaros", 0, 80),
+                new Backstage("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+                new Conjured("Conjured Mana Cake", 3, 6),
+                new Conjured("Conjured Mana Cake", 10, 6),
+                new Conjured("Conjured Mana Cake", 20, 6)*/
         };
     }
 
@@ -84,6 +112,7 @@ public class Inventory {
         for (Item item : items){
             item.update();
         }
+        this.GetSellInStat();
     }
 
     public Item newItem(int ID, Date date, String type, String name, int sellIn, int quality){
@@ -116,6 +145,30 @@ public class Inventory {
             items[i] = tmp_list[i];
         }
         items[items.length - 1] = newI;
+    }
+
+
+    public void GetSellInStat(){
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        for(int i = 0; i < items.length; i++){
+            if(!map.containsKey(items[i].getSellIn())){
+                map.put(items[i].getSellIn(), 1);
+            }
+            else{
+                map.put(items[i].getSellIn(), map.get(items[i].getSellIn())+1);
+            }
+        }
+
+        keys = new ArrayList();
+
+        for(int key : map.keySet()){
+            keys.add(String.valueOf(key));
+        }
+
+        values = new ArrayList(map.values());
+
+        //System.out.println(keys.toString());
+        //System.out.println(values.toString());
     }
 
 }
