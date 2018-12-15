@@ -24,13 +24,6 @@ public class Inventory {
         this.keys = keys;
     }
 
-    public Hashtable<String, Integer> getSellInHT() {
-        return sellInHT;
-    }
-
-    public void setSellInHT(Hashtable<String, Integer> sellInHT) {
-        this.sellInHT = sellInHT;
-    }
 
     public Inventory(Item[] items) {
         super();
@@ -45,7 +38,10 @@ public class Inventory {
                 new Elixir("Elixir of the Mongoose", 5, 7),
                 new Sulfuras("Sulfuras, Hand of Ragnaros", 0, 80),
                 new Backstage("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Conjured("Conjured Mana Cake", 3, 6)
+                new Conjured("Conjured Mana Cake", 3, 6),
+                new Conjured("Conjured Mana Cake", 10, 6),
+                new Conjured("Conjured Mana Cake", 20, 6),
+
         };
     }
 
@@ -137,15 +133,14 @@ public class Inventory {
             }
         }
 
-        System.out.println(map);
-        //keys = Collections.list(sellInLHM.keySet());
+        keys = new ArrayList();
 
+        for(int key : map.keySet()){
+            keys.add(String.valueOf(key));
+        }
 
+        values = new ArrayList(map.values());
 
-        //List sortedKeys=new ArrayList(sellInLHM.keySet());
-        //Collections.sort(sortedKeys);
-
-        //values = new ArrayList<>(sellInLHM.values());
         //System.out.println(keys.toString());
         //System.out.println(values.toString());
     }
