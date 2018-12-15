@@ -99,6 +99,7 @@ public class Controller implements Initializable {
     public void update(){
         this.inventory.updateQuality();
         displayItemDetails(list.getSelectionModel().getSelectedIndex());
+        displayBarchart_1();
     }
 
 
@@ -154,6 +155,7 @@ public class Controller implements Initializable {
     }
 
     public void displayBarchart_1(){
+        SellinChart.getData().removeAll(Collections.singleton(SellinChart.getData().setAll()));
         XYChart.Series set = new XYChart.Series();
 
         ArrayList<String> x = inventory.getKeys();

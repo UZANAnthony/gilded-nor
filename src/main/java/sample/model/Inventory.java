@@ -88,6 +88,7 @@ public class Inventory {
         for (Item item : items){
             item.update();
         }
+        this.GetSellInStat();
     }
 
     public Item newItem(String type, String name, int sellIn, int quality){
