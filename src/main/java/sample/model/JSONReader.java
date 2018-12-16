@@ -15,13 +15,7 @@ import java.util.Date;
 
 
 public class JSONReader {
-
-    public static void main(String[] Args)
-    {
-        Inventory i = new Inventory();
-        Historic h = new Historic(new ArrayList<String>(), new ArrayList<String>());
-        Inventory inv = GetItemsFromJson("newItems.json", i, h);
-    }
+    
 
     static public Inventory GetItemsFromJson(String filename, Inventory Items, Historic h) {
 
