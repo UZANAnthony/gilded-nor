@@ -4,20 +4,16 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import gherkin.lexer.Is;
-import gherkin.lexer.Th;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import org.junit.Assert;
-import sample.controller.Controller;
 import sample.model.*;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
-import java.util.function.ToIntFunction;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -28,8 +24,13 @@ public class UserInterfaceStepdefs {
     public Inventory inventory;
     public Item selectedItem;
 
-    public int numberChosenItemBeforeUpdate;
+    public int numberChosenItemBeforeUpdateForSellin;
+    public int numberChosenItemBeforeUpdateForDate;
     public int numberModificator;
+
+    public SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    public ArrayList<Integer> numberDate = new ArrayList<>();
+    public ArrayList<String> listDate = new ArrayList<>();
 
     public void initializeItemFrequency()
     {
@@ -95,10 +96,28 @@ public class UserInterfaceStepdefs {
         ArrayList<String> x = inventory.getKeys();
         ArrayList<Integer> y = inventory.getValues();
 
-        //System.out.println(inventory.getKeys());
-
         for(int i = 0; i < x.size(); i++){
             set.getData().add(new XYChart.Data(x.get(i), y.get(i)));
+        }
+    }
+
+    public void setBarchart2(){
+        XYChart.Series dataSeries1 = new XYChart.Series();
+        dataSeries1.setName("Items");
+        dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        numberDate = new ArrayList<>();
+        listDate = new ArrayList<>();
+        for (Item item : inventory.getItems()){
+            if(listDate.contains(dateFormat.format(item.getDate()))){
+                numberDate.set(listDate.indexOf(dateFormat.format(item.getDate())), numberDate.get(listDate.indexOf(dateFormat.format(item.getDate()))) + 1);
+            }
+            else{
+                numberDate.add(1);
+                listDate.add(dateFormat.format(item.getDate()));
+            }
+        }
+        for (int i = 0; i < listDate.size(); i++){
+            dataSeries1.getData().add(new XYChart.Data(listDate.get(i), numberDate.get(i)));
         }
     }
 
@@ -120,11 +139,30 @@ public class UserInterfaceStepdefs {
         return result;
     }
 
+    public int fetchNumberItemsByDate(Date date)
+    {
+        int result = 0;
+        int i = 0;
+        boolean dateFound = false;
+        while (i < listDate.size() && dateFound == false)
+        {
+            //System.out.println(listDate.get(i));
+            if (dateFormat.format(date).equals(listDate.get(i)))
+            {
+                result = numberDate.get(i);
+                dateFound = true;
+            }
+            i = i + 1;
+        }
+        return result;
+    }
+
     @Given("^the user has an inventory$")
     public void hasAnInventory() throws Throwable
     {
         inventory = new Inventory();
         inventory.GetSellInStat();
+        setBarchart2();
         numberModificator = 0;
     }
 
@@ -138,8 +176,9 @@ public class UserInterfaceStepdefs {
     @When("^the user buys an item$")
     public void addItem() throws Throwable
     {
-        selectedItem = new Sulfuras(999,new Date(),"Sulfuras, fire dragon",0,80);
-        numberChosenItemBeforeUpdate = fetchNumberItemsBySellin(selectedItem.getSellIn());
+        selectedItem = new Sulfuras(999,dateFormat.parse("25/12/2018"),"Sulfuras, fire dragon",0,80);
+        numberChosenItemBeforeUpdateForSellin = fetchNumberItemsBySellin(selectedItem.getSellIn());
+        numberChosenItemBeforeUpdateForDate = fetchNumberItemsByDate(selectedItem.getDate());
         inventory.addItem(selectedItem);
         numberModificator = numberModificator + 1;
     }
@@ -148,7 +187,8 @@ public class UserInterfaceStepdefs {
     public void sellItem() throws Throwable
     {
         selectedItem = inventory.getItems()[0];
-        numberChosenItemBeforeUpdate = fetchNumberItemsBySellin(selectedItem.getSellIn());
+        numberChosenItemBeforeUpdateForSellin = fetchNumberItemsBySellin(selectedItem.getSellIn());
+        numberChosenItemBeforeUpdateForDate = fetchNumberItemsByDate(selectedItem.getDate());
         inventory.SellItem(selectedItem.getID());
         numberModificator = numberModificator - 1;
     }
@@ -179,7 +219,14 @@ public class UserInterfaceStepdefs {
     public void barchart1sUpdated() throws Throwable
     {
         displayBarchart_1_Cucumber();
-        Assert.assertTrue(fetchNumberItemsBySellin(selectedItem.getSellIn()) == numberChosenItemBeforeUpdate + numberModificator);
+        Assert.assertTrue(fetchNumberItemsBySellin(selectedItem.getSellIn()) == numberChosenItemBeforeUpdateForSellin + numberModificator);
+    }
+
+    @Then("^the barchart 2 \\(X= creation date and Y = number of items\\) is updated$")
+    public void bartchart2IsUpdated() throws Throwable
+    {
+        setBarchart2();
+        Assert.assertTrue(fetchNumberItemsByDate(selectedItem.getDate()) == numberChosenItemBeforeUpdateForDate + numberModificator);
     }
 
 }
