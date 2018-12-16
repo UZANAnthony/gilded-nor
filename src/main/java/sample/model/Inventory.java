@@ -13,6 +13,9 @@ public class Inventory {
     private ArrayList<String> keys;
     private ArrayList<Integer> values;
 
+    private ArrayList<String> sellin;
+    private ArrayList<String> buy;
+
     public ArrayList<Integer> getValues() {
         return values;
     }
@@ -28,6 +31,13 @@ public class Inventory {
     public void setKeys(ArrayList<String> keys) {
         this.keys = keys;
     }
+
+    public ArrayList<String> getSellin() { return sellin; }
+    public void setSellin (ArrayList<String> sellin) { this.sellin = sellin;}
+    public ArrayList<String> getBuy() { return buy;}
+    public void setBuy (ArrayList<String> buy) { this.buy = buy;}
+
+
 
 
     public Inventory(Item[] items) {

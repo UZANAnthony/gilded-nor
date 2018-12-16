@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -13,10 +19,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="DragBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDropped="#handleDrop" onDragExited="#handleDetectExitDrag" onDragOver="#handleDragOver" prefHeight="800.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
+<AnchorPane id="DragBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDropped="#handleDrop" onDragExited="#handleDetectExitDrag" onDragOver="#handleDragOver" prefHeight="795.0" prefWidth="1276.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
 
   <children>
-    <ListView fx:id="list" layoutX="37.0" layoutY="48.0" prefHeight="322.0" prefWidth="256.0" />
+    <ListView fx:id="list" layoutX="41.0" layoutY="48.0" prefHeight="322.0" prefWidth="256.0" />
     <Label layoutX="37.0" layoutY="20.0" text="Items' List" />
     <Label layoutX="336.0" layoutY="20.0" text="Item Details" />
     <Label layoutX="339.0" layoutY="166.0" text="Type" />
@@ -62,6 +68,8 @@
         </yAxis>
       </BarChart>
       <Button fx:id="sell_button" disable="true" layoutX="107.0" layoutY="384.0" mnemonicParsing="false" onAction="#sellItemView" text="Sell" />
+      <Label layoutX="956.0" layoutY="362.0" text="Purchase History" />
+      <ListView fx:id="purchaseList" layoutX="957.0" layoutY="402.0" prefHeight="200.0" prefWidth="200.0" />
 
   </children>
 </AnchorPane>

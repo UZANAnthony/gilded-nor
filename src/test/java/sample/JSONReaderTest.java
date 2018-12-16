@@ -3,6 +3,7 @@ package sample;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import sample.model.Historic;
 import sample.model.Inventory;
 import sample.model.Item;
 import sample.model.JSONReader;
@@ -14,6 +15,7 @@ import static org.junit.Assert.assertThat;
 public class JSONReaderTest {
 
     protected Inventory inv;
+    private Historic h;
     Item[] ancienneListeDesItems;
 
     @Before
@@ -35,7 +37,7 @@ public class JSONReaderTest {
         Item[] items = inv.getItems();
         int lengthInv = items.length;
         int lengthJSON = 16;
-        inv = JSONReader.GetItemsFromJson("./newItems.json", inv);
+        inv = JSONReader.GetItemsFromJson("./newItems.json", inv, h);
         assertEquals(inv.getItems().length, lengthJSON + lengthInv);
     }
 
@@ -44,7 +46,7 @@ public class JSONReaderTest {
     {
         Item[] items = inv.getItems();
         String firstName = items[0].getName();
-        inv = JSONReader.GetItemsFromJson("./newItems.json", inv);
+        inv = JSONReader.GetItemsFromJson("./newItems.json", inv, h);
         assertEquals(inv.getItems()[0].getName(), firstName);
     }
 
@@ -55,7 +57,7 @@ public class JSONReaderTest {
         int lengthInv = items.length;
         int lengthJSON = 16;
         String lastName = "Conjured Mana Cake";
-        inv = JSONReader.GetItemsFromJson("./newItems.json", inv);
+        inv = JSONReader.GetItemsFromJson("./newItems.json", inv, h);
         assertEquals(inv.getItems()[lengthJSON+lengthInv-1].getName(), lastName);
     }
 }

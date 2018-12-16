@@ -4,15 +4,23 @@ import java.util.ArrayList;
 
 public class Historic {
 
-    ArrayList<Item> sellin;
-    ArrayList<Item> buy;
+    private ArrayList<String> purchase;
+    private ArrayList<String> sellin;
 
-    public Historic(ArrayList<Item> sellin, ArrayList<Item> buy)
-    {
+    public Historic() {};
+
+    public Historic(ArrayList<String> purchase, ArrayList<String> sellin) {
+        super();
+        this.purchase = purchase;
         this.sellin = sellin;
-        this.buy = buy;
     }
 
-    public ArrayList<Item> getSellin() { return sellin; }
-    public ArrayList<Item> getBuy() { return buy;}
+    public ArrayList<String> getPurchase() {
+        return purchase;
+    }
+
+    public ArrayList<String> getSellin() {
+        return sellin;
+    }
+
 }
