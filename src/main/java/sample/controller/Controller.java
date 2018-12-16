@@ -5,6 +5,7 @@ import javafx.scene.chart.BarChart;
 
 import javafx.scene.chart.*;
 
+import javafx.scene.control.Button;
 import sample.model.Inventory;
 import sample.model.Item;
 
@@ -84,6 +85,8 @@ public class Controller implements Initializable {
     CategoryAxis x;
     @FXML
     NumberAxis y;
+    @FXML
+    Button sell_button;
 
 
     Image DragOn = new Image("/fxml/DragOn.png");
@@ -108,6 +111,13 @@ public class Controller implements Initializable {
         ObservableList<String> inventory_view;
         inventory_view = FXCollections.observableArrayList(inventory.toList());
         list.setItems(inventory_view);
+        if(itemID.getText() != ""){
+            sell_button.setDisable(false);
+        }
+        else{
+            sell_button.setDisable(true);
+        }
+
     }
 
     public void displayItemDetails(int index)
@@ -253,5 +263,17 @@ public class Controller implements Initializable {
         displayPiechart();
         setBarchart2();
         displayBarchart_1();
+    }
+
+    public void sellItemView(){
+        inventory.SellItem(Integer.valueOf(itemID.getText()));
+        fetchInventory();
+
+        itemID.setText("");
+        date.setText("");
+        name.setText("");
+        sellin.setText("");
+        quality.setText("");
+        type.setText("");
     }
 }

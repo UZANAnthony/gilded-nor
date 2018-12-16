@@ -171,6 +171,29 @@ public class Inventory {
         //System.out.println(values.toString());
     }
 
+    public void SellItem(int item_id){
+        boolean done = false;
+        Item tmp_list[] = new Item[items.length];
+        for(int i = 0; i < items.length; i++){
+            tmp_list[i] = items[i];
+        }
+        items = new Item[tmp_list.length - 1];
+        for(int i = 0; i < tmp_list.length - 1; i++){
+            if(tmp_list[i].getID() == item_id){
+                items[i] = tmp_list[i+1];
+                done = true;
+            }else if (!done){
+                items[i] = tmp_list[i];
+            }else{
+                items[i] = tmp_list[i+1];
+            }
+        }
+
+        /*for(int i = 0; i < items.length; i++){
+            System.out.println(items[i]);
+        }*/
+    }
+
 }
 
 
