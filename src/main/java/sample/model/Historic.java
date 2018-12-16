@@ -5,14 +5,12 @@ import java.util.ArrayList;
 public class Historic {
 
     private ArrayList<String> purchase;
-    private ArrayList<String> sellin;
+    private ArrayList<String> sold;
 
-    public Historic() {};
-
-    public Historic(ArrayList<String> purchase, ArrayList<String> sellin) {
+    public Historic(ArrayList<String> purchase, ArrayList<String> sold) {
         super();
         this.purchase = purchase;
-        this.sellin = sellin;
+        this.sold = sold;
     }
 
     public ArrayList<String> getPurchase() {
@@ -20,7 +18,19 @@ public class Historic {
     }
 
     public ArrayList<String> getSellin() {
-        return sellin;
+        return sold;
     }
+
+    public void addToSold(String sale) {
+        System.out.println(sale);
+        sold.add(sale);
+    }
+
+    public void addToPurchase(String buy) {
+        System.out.println(buy);
+        purchase.add(buy);
+    }
+
+
 
 }

@@ -31,6 +31,7 @@ import java.io.File;
 
 import java.lang.reflect.Array;
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -285,6 +286,11 @@ public class Controller implements Initializable {
     }
 
     public void sellItemView(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date now = new Date();
+        String sold = (inventory.getItemByID(Integer.parseInt(itemID.getText())).toString() + " sold : " + dateFormat.format(now) + "\n");
+        h.addToSold(sold);
+
         inventory.SellItem(Integer.valueOf(itemID.getText()));
         fetchInventory();
 
@@ -299,6 +305,4 @@ public class Controller implements Initializable {
         displayPiechart();
         setBarchart2();
     }
-
-
 }

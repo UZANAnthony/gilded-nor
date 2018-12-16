@@ -47,8 +47,8 @@ public class JSONReader {
 
                 Item newItem = Items.newItem(id, CreationDate, type, name, sellin, quality);
                 Items.addItem(newItem);
-                String purchase = (name + newItem.getDate().toString());
-                h.getPurchase().add(purchase);
+                String purchase = (newItem.toString() + "\n");
+                h.addToPurchase(purchase);
                 i++;
 
             }

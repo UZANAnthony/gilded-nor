@@ -196,6 +196,15 @@ public class Inventory {
         }*/
     }
 
+    public Item getItemByID(int ID){
+        for (int i = 0; i < items.length; i++){
+            if(items[i].getID() == ID){
+                return items[i];
+            }
+        }
+        return null;
+    }
+
 }
 
 
