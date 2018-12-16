@@ -143,6 +143,8 @@ public class Controller implements Initializable {
 
     public void displayPiechart()
     {
+        piechartItemCount.getData().removeAll(Collections.singleton(piechartItemCount.getData().setAll()));
+
         initializeItemFrequency();
 
         piechartItemCount.setData(itemFrequency);
@@ -193,6 +195,7 @@ public class Controller implements Initializable {
     }
 
     public void setBarchart2(){
+        barchart2.getData().removeAll(Collections.singleton(barchart2.getData().setAll()));
         xAxis = new CategoryAxis();
         xAxis.setLabel("Date");
         yAxis = new NumberAxis();
@@ -272,5 +275,9 @@ public class Controller implements Initializable {
         sellin.setText("");
         quality.setText("");
         type.setText("");
+
+        displayBarchart_1();
+        displayPiechart();
+        setBarchart2();
     }
 }
