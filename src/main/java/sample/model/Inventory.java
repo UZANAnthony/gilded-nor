@@ -30,6 +30,8 @@ public class Inventory {
     }
 
 
+
+
     public Inventory(Item[] items) {
         super();
         this.items = items;
@@ -192,6 +194,15 @@ public class Inventory {
         /*for(int i = 0; i < items.length; i++){
             System.out.println(items[i]);
         }*/
+    }
+
+    public Item getItemByID(int ID){
+        for (int i = 0; i < items.length; i++){
+            if(items[i].getID() == ID){
+                return items[i];
+            }
+        }
+        return null;
     }
 
 }

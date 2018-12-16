@@ -6,6 +6,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.*;
 
 import javafx.scene.control.Button;
+import sample.model.Historic;
 import sample.model.Inventory;
 import sample.model.Item;
 
@@ -30,6 +31,7 @@ import java.io.File;
 
 import java.lang.reflect.Array;
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -55,6 +57,10 @@ public class Controller implements Initializable {
 
     @FXML
     ListView list;
+    @FXML
+    ListView purchaseList;
+    @FXML
+    ListView sellinList;
     @FXML
     TextField itemID;
     @FXML
@@ -94,6 +100,7 @@ public class Controller implements Initializable {
 
 
     public Inventory inventory = new Inventory();
+    public Historic h = new Historic(new ArrayList<String>(), new ArrayList<String>());
     public ObservableList<PieChart.Data> itemFrequency;
 
     @Override
@@ -113,6 +120,18 @@ public class Controller implements Initializable {
         list.setItems(inventory_view);
         sell_button.setDisable(true);
     }
+
+
+
+    public void PurchaseView()
+    {
+        ObservableList<String> purchase;
+        purchase = FXCollections.observableArrayList(h.getPurchase());
+        purchaseList.setItems(purchase);
+        sell_button.setDisable(true);
+    }
+
+
 
     public void displayItemDetails(int index)
     {
@@ -258,8 +277,9 @@ public class Controller implements Initializable {
     public void handleDrop(DragEvent event){
         List<File> files = event.getDragboard().getFiles();
         String file = files.get(0).toString();
-        inventory = JSONReader.GetItemsFromJson(file, inventory);
+        inventory = JSONReader.GetItemsFromJson(file, inventory, h);
         fetchInventory();
+        PurchaseView();
         initializeItemFrequency();
         displayPiechart();
         setBarchart2();
@@ -267,6 +287,11 @@ public class Controller implements Initializable {
     }
 
     public void sellItemView(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date now = new Date();
+        String sold = (inventory.getItemByID(Integer.parseInt(itemID.getText())).toString() + " sold : " + dateFormat.format(now) + "\n");
+        h.addToSold(sold);
+
         inventory.SellItem(Integer.valueOf(itemID.getText()));
         fetchInventory();
 

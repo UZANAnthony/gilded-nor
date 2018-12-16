@@ -9,14 +9,15 @@ import org.json.simple.parser.ParseException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 
 
 
 public class JSONReader {
+    
 
-
-    static public Inventory GetItemsFromJson(String filename, Inventory Items) {
+    static public Inventory GetItemsFromJson(String filename, Inventory Items, Historic h) {
 
         JSONParser parser = new JSONParser();
 
@@ -46,13 +47,11 @@ public class JSONReader {
 
                 Item newItem = Items.newItem(id, CreationDate, type, name, sellin, quality);
                 Items.addItem(newItem);
+                String purchase = (newItem.toString() + "\n");
+                h.addToPurchase(purchase);
                 i++;
-                //System.out.println(newItem.toString());
 
             }
-
-
-
 
 
             return Items;
