@@ -111,13 +111,7 @@ public class Controller implements Initializable {
         ObservableList<String> inventory_view;
         inventory_view = FXCollections.observableArrayList(inventory.toList());
         list.setItems(inventory_view);
-        if(itemID.getText() != ""){
-            sell_button.setDisable(false);
-        }
-        else{
-            sell_button.setDisable(true);
-        }
-
+        sell_button.setDisable(true);
     }
 
     public void displayItemDetails(int index)
@@ -130,6 +124,9 @@ public class Controller implements Initializable {
             sellin.setText(String.valueOf(item.getSellIn()));
             quality.setText(String.valueOf(item.getQuality()));
             type.setText(item.getClass().getSimpleName());
+            if(itemID.getText() != ""){
+                sell_button.setDisable(false);
+            }
         }
         catch (Exception e)
         {
