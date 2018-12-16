@@ -68,8 +68,10 @@
         </yAxis>
       </BarChart>
       <Button fx:id="sell_button" disable="true" layoutX="107.0" layoutY="384.0" mnemonicParsing="false" onAction="#sellItemView" text="Sell" />
-      <Label layoutX="956.0" layoutY="362.0" text="Purchase History" />
-      <ListView fx:id="purchaseList" layoutX="957.0" layoutY="402.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="956.0" layoutY="406.0" text="Purchase History" />
+      <ListView fx:id="purchaseList" layoutX="957.0" layoutY="443.0" prefHeight="315.0" prefWidth="271.0" />
+      <ListView fx:id="sellinList" layoutX="959.0" layoutY="80.0" prefHeight="297.0" prefWidth="267.0" />
+      <Label layoutX="959.0" layoutY="35.0" text="Sellin History" />
 
   </children>
 </AnchorPane>

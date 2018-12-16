@@ -59,6 +59,8 @@ public class Controller implements Initializable {
     @FXML
     ListView purchaseList;
     @FXML
+    ListView sellinList;
+    @FXML
     TextField itemID;
     @FXML
     TextField date;
@@ -275,6 +277,7 @@ public class Controller implements Initializable {
         String file = files.get(0).toString();
         inventory = JSONReader.GetItemsFromJson(file, inventory, h);
         fetchInventory();
+        PurchaseView();
         initializeItemFrequency();
         displayPiechart();
         setBarchart2();
