@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -17,7 +18,10 @@ public class Main extends Application {
         URL url = new File("src/main/resources/fxml/Item.fxml").toURL();
         Parent root = FXMLLoader.load(url);
         primaryStage.setTitle("Inventory");
-        primaryStage.setScene(new Scene(root, 900, 820));
+        Scene scene = new Scene(root, 960, 820);
+        primaryStage.setScene(scene);
+
+
         primaryStage.show();
     }
 

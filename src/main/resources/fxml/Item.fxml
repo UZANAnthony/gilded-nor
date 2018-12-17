@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="DragBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDropped="#handleDrop" onDragExited="#handleDetectExitDrag" onDragOver="#handleDragOver" prefHeight="795.0" prefWidth="1276.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
+<AnchorPane id="DragBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDropped="#handleDrop" onDragExited="#handleDetectExitDrag" onDragOver="#handleDragOver" prefHeight="795.0" prefWidth="996.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
 
   <children>
     <ListView fx:id="list" layoutX="41.0" layoutY="48.0" prefHeight="322.0" prefWidth="256.0" />
@@ -29,33 +29,28 @@
     <Label layoutX="337.0" layoutY="235.0" text="Name" />
     <Label layoutX="336.0" layoutY="309.0" text="Sell In" />
     <Label layoutX="334.0" layoutY="380.0" text="Quality" />
-    <TextField fx:id="type" layoutX="335.0" layoutY="196.0" prefWidth="211.0" />
-    <TextField fx:id="name" layoutX="335.0" layoutY="267.0" prefWidth="211.0" />
-    <TextField fx:id="sellin" layoutX="335.0" layoutY="337.0" prefWidth="211.0" />
-    <TextField fx:id="quality" layoutX="335.0" layoutY="404.0" prefWidth="211.0" />
+    <TextField fx:id="type" editable="false" layoutX="335.0" layoutY="196.0" prefWidth="211.0" />
+    <TextField fx:id="name" editable="false" layoutX="335.0" layoutY="267.0" prefWidth="211.0" />
+    <TextField fx:id="sellin" editable="false" layoutX="335.0" layoutY="337.0" prefWidth="211.0" />
+    <TextField fx:id="quality" editable="false" layoutX="335.0" layoutY="404.0" prefWidth="211.0" />
     <Button layoutX="37.0" layoutY="384.0" mnemonicParsing="false" onAction="#update" text="Update" />
-    <PieChart fx:id="piechartItemCount" labelLineLength="10.0" labelsVisible="false" layoutX="579.0" layoutY="28.0" prefHeight="342.0" prefWidth="307.0" />
+    <PieChart fx:id="piechartItemCount" labelLineLength="10.0" labelsVisible="false" layoutX="579.0" layoutY="28.0" prefHeight="342.0" prefWidth="340.0" />
     <ImageView fx:id="dragBox" fitHeight="59.0" fitWidth="59.0" layoutX="234.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@DragOff.png" />
       </image>
     </ImageView>
-    <Label fx:id="letgo" layoutX="465.0" layoutY="372.0" text="Let go !" visible="false">
-      <font>
-        <Font name="Arial Bold" size="12.0" />
-      </font>
-    </Label>
 
-    <TextField fx:id="date" layoutX="335.0" layoutY="126.0" prefWidth="211.0" />
+    <TextField fx:id="date" editable="false" layoutX="335.0" layoutY="126.0" prefWidth="211.0" />
     <Label layoutX="336.0" layoutY="98.0" text="Creation date" />
-    <TextField fx:id="itemID" layoutX="356.0" layoutY="56.0" prefHeight="27.0" prefWidth="73.0" />
+    <TextField fx:id="itemID" editable="false" layoutX="356.0" layoutY="56.0" prefHeight="27.0" prefWidth="73.0" />
     <Label layoutX="335.0" layoutY="61.0" text="ID: " />
-    <BarChart fx:id="barchart2" layoutX="449.0" layoutY="458.0" prefHeight="322.0" prefWidth="385.0">
+    <BarChart fx:id="barchart2" layoutX="538.0" layoutY="481.0" prefHeight="285.0" prefWidth="394.0" title="Date's information">
       <xAxis>
-        <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+        <CategoryAxis label="Date" side="BOTTOM" fx:id="xAxis" />
       </xAxis>
       <yAxis>
-        <NumberAxis fx:id="yAxis" side="LEFT" />
+        <NumberAxis fx:id="yAxis" label="Item's nb" side="LEFT" />
       </yAxis>
     </BarChart>
 
@@ -68,10 +63,7 @@
         </yAxis>
       </BarChart>
       <Button fx:id="sell_button" disable="true" layoutX="107.0" layoutY="384.0" mnemonicParsing="false" onAction="#sellItemView" text="Sell" />
-      <Label layoutX="956.0" layoutY="406.0" text="Purchase History" />
-      <ListView fx:id="purchaseList" layoutX="957.0" layoutY="443.0" prefHeight="315.0" prefWidth="271.0" />
-      <ListView fx:id="sellinList" layoutX="959.0" layoutY="80.0" prefHeight="297.0" prefWidth="267.0" />
-      <Label layoutX="959.0" layoutY="35.0" text="Sellin History" />
+      <Label fx:id="letgo" layoutX="235.0" layoutY="452.0" text="Let it Go !" textFill="#3099cd" visible="false" />
 
   </children>
 </AnchorPane>

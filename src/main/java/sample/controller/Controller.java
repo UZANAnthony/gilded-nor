@@ -58,10 +58,6 @@ public class Controller implements Initializable {
     @FXML
     ListView list;
     @FXML
-    ListView purchaseList;
-    @FXML
-    ListView sellinList;
-    @FXML
     TextField itemID;
     @FXML
     TextField date;
@@ -120,17 +116,6 @@ public class Controller implements Initializable {
         list.setItems(inventory_view);
         sell_button.setDisable(true);
     }
-
-
-
-    public void PurchaseView()
-    {
-        ObservableList<String> purchase;
-        purchase = FXCollections.observableArrayList(h.getPurchase());
-        purchaseList.setItems(purchase);
-        sell_button.setDisable(true);
-    }
-
 
 
     public void displayItemDetails(int index)
@@ -279,7 +264,6 @@ public class Controller implements Initializable {
         String file = files.get(0).toString();
         inventory = JSONReader.GetItemsFromJson(file, inventory, h);
         fetchInventory();
-        PurchaseView();
         initializeItemFrequency();
         displayPiechart();
         setBarchart2();
