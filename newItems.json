@@ -23,91 +23,91 @@
   {
     "ID": 10,
     "class": "AgedBrie",
-    "name": "Aged Brie",
+    "name": "Le vieux Mont or",
     "sellIn": 5,
     "quality": 2
   },
   {
     "ID": 11,
     "class": "AgedBrie",
-    "name": "Aged Brie",
+    "name": "Vache qui pleure",
     "sellIn": 8,
     "quality": 5
   },
   {
     "ID": 12,
     "class": "Elixir",
-    "name": "Elixir of the Mongoose",
+    "name": "Jus de bagarre",
     "sellIn": 10,
     "quality": 2
   },
   {
     "ID": 13,
     "class": "Elixir",
-    "name": "Elixir of the Mongoose",
+    "name": "Canette de Jul",
     "sellIn": 8,
     "quality": 5
   },
   {
     "ID": 14,
     "class": "Elixir",
-    "name": "Elixir of the Mongoose",
+    "name": "Clan Campbell",
     "sellIn": 25,
     "quality": 17
   },
   {
     "ID": 15,
     "class": "Elixir",
-    "name": "Elixir of the Mongoose",
+    "name": "Grey Mongoose",
     "sellIn": 5,
     "quality": 15
   },
   {
     "ID": 16,
     "class": "Elixir",
-    "name": "Elixir of the Mongoose",
+    "name": "Duc",
     "sellIn": 8,
     "quality": 5
   },
   {
     "ID": 17,
     "class": "Elixir",
-    "name": "Elixir of the Mongoose",
+    "name": "JD",
     "sellIn": 8,
     "quality": 5
   },
   {
     "ID": 18,
     "class": "Backstage",
-    "name": "Backstage passes to a TAFKAL80ETC concert",
+    "name": "Backstage passes to a B2O concert",
     "sellIn": 5,
     "quality": 15
   },
   {
     "ID": 19,
     "class": "Backstage",
-    "name": "Backstage passes to a TAFKAL80ETC concert",
+    "name": "Backstage passes to a Gradoux concert",
     "sellIn": 20,
     "quality": 20
   },
   {
     "ID": 20,
     "class": "Conjured",
-    "name": "Conjured Mana Cake",
+    "name": "Conjured Tmax",
     "sellIn": 25,
     "quality": 17
   },
   {
     "ID": 21,
     "class": "Conjured",
-    "name": "Conjured Mana Cake",
+    "name": "Conjured Air Jojo",
     "sellIn": 10,
     "quality": 2
   },
   {
     "ID": 22,
     "class": "Conjured",
-    "name": "Conjured Mana Cake",
+    "name": "Conjured Mister You",
     "sellIn": 5,
     "quality": 15
   }

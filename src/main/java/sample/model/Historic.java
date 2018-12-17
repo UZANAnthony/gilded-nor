@@ -24,13 +24,13 @@ public class Historic {
     }
 
     public void addToSold(String sale) {
-        System.out.println(sale);
+        //System.out.println(sale);
         sold.add(sale);
         exportHistoric();
     }
 
     public void addToPurchase(String buy) {
-        System.out.println(buy);
+        //System.out.println(buy);
         purchase.add(buy);
         exportHistoric();
     }
