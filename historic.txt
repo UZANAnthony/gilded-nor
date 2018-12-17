@@ -1,22 +1,4 @@
 PURCHASE : 
-Item{ID:7, Date:Mon Dec 17 14:06:43 CET 2018, name:'+10 Dexterity Vest', sellIn:20, quality:20}
-Item{ID:8, Date:Mon Dec 17 14:06:43 CET 2018, name:'+7 Dexterity Vest', sellIn:5, quality:15}
-Item{ID:9, Date:Mon Dec 17 14:06:43 CET 2018, name:'+8 Dexterity Vest', sellIn:25, quality:17}
-Item{ID:10, Date:Mon Dec 17 14:06:43 CET 2018, name:'Le vieux Mont or', sellIn:5, quality:2}
-Item{ID:11, Date:Mon Dec 17 14:06:43 CET 2018, name:'Vache qui pleure', sellIn:8, quality:5}
-Item{ID:12, Date:Mon Dec 17 14:06:43 CET 2018, name:'Jus de bagarre', sellIn:10, quality:2}
-Item{ID:13, Date:Mon Dec 17 14:06:43 CET 2018, name:'Canette de Jul', sellIn:8, quality:5}
-Item{ID:14, Date:Mon Dec 17 14:06:43 CET 2018, name:'Clan Campbell', sellIn:25, quality:17}
-Item{ID:15, Date:Mon Dec 17 14:06:43 CET 2018, name:'Grey Mongoose', sellIn:5, quality:15}
-Item{ID:16, Date:Mon Dec 17 14:06:43 CET 2018, name:'Duc', sellIn:8, quality:5}
-Item{ID:17, Date:Mon Dec 17 14:06:43 CET 2018, name:'JD', sellIn:8, quality:5}
-Item{ID:18, Date:Mon Dec 17 14:06:43 CET 2018, name:'Backstage passes to a B2O concert', sellIn:5, quality:15}
-Item{ID:19, Date:Mon Dec 17 14:06:43 CET 2018, name:'Backstage passes to a Gradoux concert', sellIn:20, quality:20}
-Item{ID:20, Date:Mon Dec 17 14:06:43 CET 2018, name:'Conjured Tmax', sellIn:25, quality:17}
-Item{ID:21, Date:Mon Dec 17 14:06:43 CET 2018, name:'Conjured Air Jojo', sellIn:10, quality:2}
-Item{ID:22, Date:Mon Dec 17 14:06:43 CET 2018, name:'Conjured Mister You', sellIn:5, quality:15}
+Item{ID:7, Date:Mon Dec 17 14:54:38 CET 2018, name:'Conjured Geox', sellIn:5, quality:15}
 SOLD : 
-Item{ID:13, Date:Mon Dec 17 14:06:43 CET 2018, name:'Canette de Jul', sellIn:7, quality:4} sold : 2018/12/17 14:07:02
-Item{ID:18, Date:Mon Dec 17 14:06:43 CET 2018, name:'Backstage passes to a B2O concert', sellIn:4, quality:18} sold : 2018/12/17 14:07:05
-Item{ID:19, Date:Mon Dec 17 14:06:43 CET 2018, name:'Backstage passes to a Gradoux concert', sellIn:19, quality:21} sold : 2018/12/17 14:07:08
-Item{ID:10, Date:Mon Dec 17 14:06:43 CET 2018, name:'Le vieux Mont or', sellIn:4, quality:3} sold : 2018/12/17 14:07:10
+Item{ID:7, Date:Mon Dec 17 14:54:38 CET 2018, name:'Conjured Geox', sellIn:5, quality:15} sold : 2018/12/17 14:54:43
