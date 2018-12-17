@@ -32,6 +32,11 @@ public class UserInterfaceStepdefs {
     public ArrayList<Integer> numberDate = new ArrayList<>();
     public ArrayList<String> listDate = new ArrayList<>();
 
+    public Historic h = new Historic(new ArrayList<String>(), new ArrayList<String>());
+
+    public boolean itemAddedToTheHistory = false;
+    public boolean saleAddedToTheHistory = false;
+
     public void initializeItemFrequency()
     {
         itemFrequency = FXCollections.observableArrayList();
@@ -181,12 +186,18 @@ public class UserInterfaceStepdefs {
         numberChosenItemBeforeUpdateForDate = fetchNumberItemsByDate(selectedItem.getDate());
         inventory.addItem(selectedItem);
         numberModificator = numberModificator + 1;
+        String purchase = (selectedItem.toString() + "\n");
+        h.addToPurchase(purchase);
+        itemAddedToTheHistory = true;
     }
 
     @When("^the user sells an item$")
     public void sellItem() throws Throwable
     {
         selectedItem = inventory.getItems()[0];
+        String sold = inventory.getItemByID(selectedItem.getID()).toString() + " sold : " + dateFormat.format(new Date()) + "\n";
+        h.addToSold(sold);
+        saleAddedToTheHistory = true;
         numberChosenItemBeforeUpdateForSellin = fetchNumberItemsBySellin(selectedItem.getSellIn());
         numberChosenItemBeforeUpdateForDate = fetchNumberItemsByDate(selectedItem.getDate());
         inventory.SellItem(selectedItem.getID());
@@ -229,4 +240,27 @@ public class UserInterfaceStepdefs {
         Assert.assertTrue(fetchNumberItemsByDate(selectedItem.getDate()) == numberChosenItemBeforeUpdateForDate + numberModificator);
     }
 
+    @Then("^the item is added to the list$")
+    public void itemIsAddedToTheList() throws Throwable
+    {
+        Assert.assertNotNull(inventory.getItemByID(selectedItem.getID()));
+    }
+
+    @Then("^the item is removed from the list$")
+    public void itemIsRemovedFromTheList() throws Throwable
+    {
+        Assert.assertNull(inventory.getItemByID(selectedItem.getID()));
+    }
+
+    @And("^the item is added to the history$")
+    public void itemIsAddedToTheHistory() throws Throwable
+    {
+        Assert.assertTrue(itemAddedToTheHistory);
+    }
+
+    @And("^the sale is added to the history$")
+    public void saleIsAddedToTheHistory() throws Throwable
+    {
+        Assert.assertTrue(saleAddedToTheHistory);
+    }
 }
